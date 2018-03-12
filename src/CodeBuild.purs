@@ -20,82 +20,110 @@ import Data.StrMap as StrMap
 import AWS.Request as Request
 import AWS.Request.Types as Types
 
-serviceName = "CodeBuild" :: String
-
 
 -- | <p>Deletes one or more builds.</p>
 batchDeleteBuilds :: forall eff. BatchDeleteBuildsInput -> Aff (exception :: EXCEPTION | eff) BatchDeleteBuildsOutput
-batchDeleteBuilds = Request.request serviceName "batchDeleteBuilds" 
+batchDeleteBuilds = Request.request service method  where
+    service = Request.ServiceName "CodeBuild"
+    method = Request.MethodName "batchDeleteBuilds"
 
 
 -- | <p>Gets information about builds.</p>
 batchGetBuilds :: forall eff. BatchGetBuildsInput -> Aff (exception :: EXCEPTION | eff) BatchGetBuildsOutput
-batchGetBuilds = Request.request serviceName "batchGetBuilds" 
+batchGetBuilds = Request.request service method  where
+    service = Request.ServiceName "CodeBuild"
+    method = Request.MethodName "batchGetBuilds"
 
 
 -- | <p>Gets information about build projects.</p>
 batchGetProjects :: forall eff. BatchGetProjectsInput -> Aff (exception :: EXCEPTION | eff) BatchGetProjectsOutput
-batchGetProjects = Request.request serviceName "batchGetProjects" 
+batchGetProjects = Request.request service method  where
+    service = Request.ServiceName "CodeBuild"
+    method = Request.MethodName "batchGetProjects"
 
 
 -- | <p>Creates a build project.</p>
 createProject :: forall eff. CreateProjectInput -> Aff (exception :: EXCEPTION | eff) CreateProjectOutput
-createProject = Request.request serviceName "createProject" 
+createProject = Request.request service method  where
+    service = Request.ServiceName "CodeBuild"
+    method = Request.MethodName "createProject"
 
 
 -- | <p>For an existing AWS CodeBuild build project that has its source code stored in a GitHub repository, enables AWS CodeBuild to begin automatically rebuilding the source code every time a code change is pushed to the repository.</p> <important> <p>If you enable webhooks for an AWS CodeBuild project, and the project is used as a build step in AWS CodePipeline, then two identical builds will be created for each commit. One build is triggered through webhooks, and one through AWS CodePipeline. Because billing is on a per-build basis, you will be billed for both builds. Therefore, if you are using AWS CodePipeline, we recommend that you disable webhooks in CodeBuild. In the AWS CodeBuild console, clear the Webhook box. For more information, see step 9 in <a href="http://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change a Build Project's Settings</a>.</p> </important>
 createWebhook :: forall eff. CreateWebhookInput -> Aff (exception :: EXCEPTION | eff) CreateWebhookOutput
-createWebhook = Request.request serviceName "createWebhook" 
+createWebhook = Request.request service method  where
+    service = Request.ServiceName "CodeBuild"
+    method = Request.MethodName "createWebhook"
 
 
 -- | <p>Deletes a build project.</p>
 deleteProject :: forall eff. DeleteProjectInput -> Aff (exception :: EXCEPTION | eff) DeleteProjectOutput
-deleteProject = Request.request serviceName "deleteProject" 
+deleteProject = Request.request service method  where
+    service = Request.ServiceName "CodeBuild"
+    method = Request.MethodName "deleteProject"
 
 
 -- | <p>For an existing AWS CodeBuild build project that has its source code stored in a GitHub repository, stops AWS CodeBuild from automatically rebuilding the source code every time a code change is pushed to the repository.</p>
 deleteWebhook :: forall eff. DeleteWebhookInput -> Aff (exception :: EXCEPTION | eff) DeleteWebhookOutput
-deleteWebhook = Request.request serviceName "deleteWebhook" 
+deleteWebhook = Request.request service method  where
+    service = Request.ServiceName "CodeBuild"
+    method = Request.MethodName "deleteWebhook"
 
 
 -- | <p>Resets the cache for a project.</p>
 invalidateProjectCache :: forall eff. InvalidateProjectCacheInput -> Aff (exception :: EXCEPTION | eff) InvalidateProjectCacheOutput
-invalidateProjectCache = Request.request serviceName "invalidateProjectCache" 
+invalidateProjectCache = Request.request service method  where
+    service = Request.ServiceName "CodeBuild"
+    method = Request.MethodName "invalidateProjectCache"
 
 
 -- | <p>Gets a list of build IDs, with each build ID representing a single build.</p>
 listBuilds :: forall eff. ListBuildsInput -> Aff (exception :: EXCEPTION | eff) ListBuildsOutput
-listBuilds = Request.request serviceName "listBuilds" 
+listBuilds = Request.request service method  where
+    service = Request.ServiceName "CodeBuild"
+    method = Request.MethodName "listBuilds"
 
 
 -- | <p>Gets a list of build IDs for the specified build project, with each build ID representing a single build.</p>
 listBuildsForProject :: forall eff. ListBuildsForProjectInput -> Aff (exception :: EXCEPTION | eff) ListBuildsForProjectOutput
-listBuildsForProject = Request.request serviceName "listBuildsForProject" 
+listBuildsForProject = Request.request service method  where
+    service = Request.ServiceName "CodeBuild"
+    method = Request.MethodName "listBuildsForProject"
 
 
 -- | <p>Gets information about Docker images that are managed by AWS CodeBuild.</p>
 listCuratedEnvironmentImages :: forall eff. ListCuratedEnvironmentImagesInput -> Aff (exception :: EXCEPTION | eff) ListCuratedEnvironmentImagesOutput
-listCuratedEnvironmentImages = Request.request serviceName "listCuratedEnvironmentImages" 
+listCuratedEnvironmentImages = Request.request service method  where
+    service = Request.ServiceName "CodeBuild"
+    method = Request.MethodName "listCuratedEnvironmentImages"
 
 
 -- | <p>Gets a list of build project names, with each build project name representing a single build project.</p>
 listProjects :: forall eff. ListProjectsInput -> Aff (exception :: EXCEPTION | eff) ListProjectsOutput
-listProjects = Request.request serviceName "listProjects" 
+listProjects = Request.request service method  where
+    service = Request.ServiceName "CodeBuild"
+    method = Request.MethodName "listProjects"
 
 
 -- | <p>Starts running a build.</p>
 startBuild :: forall eff. StartBuildInput -> Aff (exception :: EXCEPTION | eff) StartBuildOutput
-startBuild = Request.request serviceName "startBuild" 
+startBuild = Request.request service method  where
+    service = Request.ServiceName "CodeBuild"
+    method = Request.MethodName "startBuild"
 
 
 -- | <p>Attempts to stop running a build.</p>
 stopBuild :: forall eff. StopBuildInput -> Aff (exception :: EXCEPTION | eff) StopBuildOutput
-stopBuild = Request.request serviceName "stopBuild" 
+stopBuild = Request.request service method  where
+    service = Request.ServiceName "CodeBuild"
+    method = Request.MethodName "stopBuild"
 
 
 -- | <p>Changes the settings of a build project.</p>
 updateProject :: forall eff. UpdateProjectInput -> Aff (exception :: EXCEPTION | eff) UpdateProjectOutput
-updateProject = Request.request serviceName "updateProject" 
+updateProject = Request.request service method  where
+    service = Request.ServiceName "CodeBuild"
+    method = Request.MethodName "updateProject"
 
 
 -- | <p>An AWS service limit was exceeded for the calling AWS account.</p>
