@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -76,8 +75,8 @@ newBatchDeleteBuildsInput' _ids customize = (BatchDeleteBuildsInput <<< customiz
 
 
 newtype BatchDeleteBuildsOutput = BatchDeleteBuildsOutput 
-  { "buildsDeleted" :: NullOrUndefined (BuildIds)
-  , "buildsNotDeleted" :: NullOrUndefined (BuildsNotDeleted)
+  { "buildsDeleted" :: Maybe (BuildIds)
+  , "buildsNotDeleted" :: Maybe (BuildsNotDeleted)
   }
 derive instance newtypeBatchDeleteBuildsOutput :: Newtype BatchDeleteBuildsOutput _
 derive instance repGenericBatchDeleteBuildsOutput :: Generic BatchDeleteBuildsOutput _
@@ -87,12 +86,12 @@ instance encodeBatchDeleteBuildsOutput :: Encode BatchDeleteBuildsOutput where e
 
 -- | Constructs BatchDeleteBuildsOutput from required parameters
 newBatchDeleteBuildsOutput :: BatchDeleteBuildsOutput
-newBatchDeleteBuildsOutput  = BatchDeleteBuildsOutput { "buildsDeleted": (NullOrUndefined Nothing), "buildsNotDeleted": (NullOrUndefined Nothing) }
+newBatchDeleteBuildsOutput  = BatchDeleteBuildsOutput { "buildsDeleted": Nothing, "buildsNotDeleted": Nothing }
 
 -- | Constructs BatchDeleteBuildsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchDeleteBuildsOutput' :: ( { "buildsDeleted" :: NullOrUndefined (BuildIds) , "buildsNotDeleted" :: NullOrUndefined (BuildsNotDeleted) } -> {"buildsDeleted" :: NullOrUndefined (BuildIds) , "buildsNotDeleted" :: NullOrUndefined (BuildsNotDeleted) } ) -> BatchDeleteBuildsOutput
-newBatchDeleteBuildsOutput'  customize = (BatchDeleteBuildsOutput <<< customize) { "buildsDeleted": (NullOrUndefined Nothing), "buildsNotDeleted": (NullOrUndefined Nothing) }
+newBatchDeleteBuildsOutput' :: ( { "buildsDeleted" :: Maybe (BuildIds) , "buildsNotDeleted" :: Maybe (BuildsNotDeleted) } -> {"buildsDeleted" :: Maybe (BuildIds) , "buildsNotDeleted" :: Maybe (BuildsNotDeleted) } ) -> BatchDeleteBuildsOutput
+newBatchDeleteBuildsOutput'  customize = (BatchDeleteBuildsOutput <<< customize) { "buildsDeleted": Nothing, "buildsNotDeleted": Nothing }
 
 
 
@@ -117,8 +116,8 @@ newBatchGetBuildsInput' _ids customize = (BatchGetBuildsInput <<< customize) { "
 
 
 newtype BatchGetBuildsOutput = BatchGetBuildsOutput 
-  { "builds" :: NullOrUndefined (Builds)
-  , "buildsNotFound" :: NullOrUndefined (BuildIds)
+  { "builds" :: Maybe (Builds)
+  , "buildsNotFound" :: Maybe (BuildIds)
   }
 derive instance newtypeBatchGetBuildsOutput :: Newtype BatchGetBuildsOutput _
 derive instance repGenericBatchGetBuildsOutput :: Generic BatchGetBuildsOutput _
@@ -128,12 +127,12 @@ instance encodeBatchGetBuildsOutput :: Encode BatchGetBuildsOutput where encode 
 
 -- | Constructs BatchGetBuildsOutput from required parameters
 newBatchGetBuildsOutput :: BatchGetBuildsOutput
-newBatchGetBuildsOutput  = BatchGetBuildsOutput { "builds": (NullOrUndefined Nothing), "buildsNotFound": (NullOrUndefined Nothing) }
+newBatchGetBuildsOutput  = BatchGetBuildsOutput { "builds": Nothing, "buildsNotFound": Nothing }
 
 -- | Constructs BatchGetBuildsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchGetBuildsOutput' :: ( { "builds" :: NullOrUndefined (Builds) , "buildsNotFound" :: NullOrUndefined (BuildIds) } -> {"builds" :: NullOrUndefined (Builds) , "buildsNotFound" :: NullOrUndefined (BuildIds) } ) -> BatchGetBuildsOutput
-newBatchGetBuildsOutput'  customize = (BatchGetBuildsOutput <<< customize) { "builds": (NullOrUndefined Nothing), "buildsNotFound": (NullOrUndefined Nothing) }
+newBatchGetBuildsOutput' :: ( { "builds" :: Maybe (Builds) , "buildsNotFound" :: Maybe (BuildIds) } -> {"builds" :: Maybe (Builds) , "buildsNotFound" :: Maybe (BuildIds) } ) -> BatchGetBuildsOutput
+newBatchGetBuildsOutput'  customize = (BatchGetBuildsOutput <<< customize) { "builds": Nothing, "buildsNotFound": Nothing }
 
 
 
@@ -158,8 +157,8 @@ newBatchGetProjectsInput' _names customize = (BatchGetProjectsInput <<< customiz
 
 
 newtype BatchGetProjectsOutput = BatchGetProjectsOutput 
-  { "projects" :: NullOrUndefined (Projects)
-  , "projectsNotFound" :: NullOrUndefined (ProjectNames)
+  { "projects" :: Maybe (Projects)
+  , "projectsNotFound" :: Maybe (ProjectNames)
   }
 derive instance newtypeBatchGetProjectsOutput :: Newtype BatchGetProjectsOutput _
 derive instance repGenericBatchGetProjectsOutput :: Generic BatchGetProjectsOutput _
@@ -169,36 +168,36 @@ instance encodeBatchGetProjectsOutput :: Encode BatchGetProjectsOutput where enc
 
 -- | Constructs BatchGetProjectsOutput from required parameters
 newBatchGetProjectsOutput :: BatchGetProjectsOutput
-newBatchGetProjectsOutput  = BatchGetProjectsOutput { "projects": (NullOrUndefined Nothing), "projectsNotFound": (NullOrUndefined Nothing) }
+newBatchGetProjectsOutput  = BatchGetProjectsOutput { "projects": Nothing, "projectsNotFound": Nothing }
 
 -- | Constructs BatchGetProjectsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchGetProjectsOutput' :: ( { "projects" :: NullOrUndefined (Projects) , "projectsNotFound" :: NullOrUndefined (ProjectNames) } -> {"projects" :: NullOrUndefined (Projects) , "projectsNotFound" :: NullOrUndefined (ProjectNames) } ) -> BatchGetProjectsOutput
-newBatchGetProjectsOutput'  customize = (BatchGetProjectsOutput <<< customize) { "projects": (NullOrUndefined Nothing), "projectsNotFound": (NullOrUndefined Nothing) }
+newBatchGetProjectsOutput' :: ( { "projects" :: Maybe (Projects) , "projectsNotFound" :: Maybe (ProjectNames) } -> {"projects" :: Maybe (Projects) , "projectsNotFound" :: Maybe (ProjectNames) } ) -> BatchGetProjectsOutput
+newBatchGetProjectsOutput'  customize = (BatchGetProjectsOutput <<< customize) { "projects": Nothing, "projectsNotFound": Nothing }
 
 
 
 -- | <p>Information about a build.</p>
 newtype Build = Build 
-  { "id" :: NullOrUndefined (NonEmptyString)
-  , "arn" :: NullOrUndefined (NonEmptyString)
-  , "startTime" :: NullOrUndefined (Types.Timestamp)
-  , "endTime" :: NullOrUndefined (Types.Timestamp)
-  , "currentPhase" :: NullOrUndefined (String)
-  , "buildStatus" :: NullOrUndefined (StatusType)
-  , "sourceVersion" :: NullOrUndefined (NonEmptyString)
-  , "projectName" :: NullOrUndefined (NonEmptyString)
-  , "phases" :: NullOrUndefined (BuildPhases)
-  , "source" :: NullOrUndefined (ProjectSource)
-  , "artifacts" :: NullOrUndefined (BuildArtifacts)
-  , "cache" :: NullOrUndefined (ProjectCache)
-  , "environment" :: NullOrUndefined (ProjectEnvironment)
-  , "logs" :: NullOrUndefined (LogsLocation)
-  , "timeoutInMinutes" :: NullOrUndefined (WrapperInt)
-  , "buildComplete" :: NullOrUndefined (Boolean)
-  , "initiator" :: NullOrUndefined (String)
-  , "vpcConfig" :: NullOrUndefined (VpcConfig)
-  , "networkInterface" :: NullOrUndefined (NetworkInterface)
+  { "id" :: Maybe (NonEmptyString)
+  , "arn" :: Maybe (NonEmptyString)
+  , "startTime" :: Maybe (Types.Timestamp)
+  , "endTime" :: Maybe (Types.Timestamp)
+  , "currentPhase" :: Maybe (String)
+  , "buildStatus" :: Maybe (StatusType)
+  , "sourceVersion" :: Maybe (NonEmptyString)
+  , "projectName" :: Maybe (NonEmptyString)
+  , "phases" :: Maybe (BuildPhases)
+  , "source" :: Maybe (ProjectSource)
+  , "artifacts" :: Maybe (BuildArtifacts)
+  , "cache" :: Maybe (ProjectCache)
+  , "environment" :: Maybe (ProjectEnvironment)
+  , "logs" :: Maybe (LogsLocation)
+  , "timeoutInMinutes" :: Maybe (WrapperInt)
+  , "buildComplete" :: Maybe (Boolean)
+  , "initiator" :: Maybe (String)
+  , "vpcConfig" :: Maybe (VpcConfig)
+  , "networkInterface" :: Maybe (NetworkInterface)
   }
 derive instance newtypeBuild :: Newtype Build _
 derive instance repGenericBuild :: Generic Build _
@@ -208,20 +207,20 @@ instance encodeBuild :: Encode Build where encode = genericEncode options
 
 -- | Constructs Build from required parameters
 newBuild :: Build
-newBuild  = Build { "arn": (NullOrUndefined Nothing), "artifacts": (NullOrUndefined Nothing), "buildComplete": (NullOrUndefined Nothing), "buildStatus": (NullOrUndefined Nothing), "cache": (NullOrUndefined Nothing), "currentPhase": (NullOrUndefined Nothing), "endTime": (NullOrUndefined Nothing), "environment": (NullOrUndefined Nothing), "id": (NullOrUndefined Nothing), "initiator": (NullOrUndefined Nothing), "logs": (NullOrUndefined Nothing), "networkInterface": (NullOrUndefined Nothing), "phases": (NullOrUndefined Nothing), "projectName": (NullOrUndefined Nothing), "source": (NullOrUndefined Nothing), "sourceVersion": (NullOrUndefined Nothing), "startTime": (NullOrUndefined Nothing), "timeoutInMinutes": (NullOrUndefined Nothing), "vpcConfig": (NullOrUndefined Nothing) }
+newBuild  = Build { "arn": Nothing, "artifacts": Nothing, "buildComplete": Nothing, "buildStatus": Nothing, "cache": Nothing, "currentPhase": Nothing, "endTime": Nothing, "environment": Nothing, "id": Nothing, "initiator": Nothing, "logs": Nothing, "networkInterface": Nothing, "phases": Nothing, "projectName": Nothing, "source": Nothing, "sourceVersion": Nothing, "startTime": Nothing, "timeoutInMinutes": Nothing, "vpcConfig": Nothing }
 
 -- | Constructs Build's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBuild' :: ( { "id" :: NullOrUndefined (NonEmptyString) , "arn" :: NullOrUndefined (NonEmptyString) , "startTime" :: NullOrUndefined (Types.Timestamp) , "endTime" :: NullOrUndefined (Types.Timestamp) , "currentPhase" :: NullOrUndefined (String) , "buildStatus" :: NullOrUndefined (StatusType) , "sourceVersion" :: NullOrUndefined (NonEmptyString) , "projectName" :: NullOrUndefined (NonEmptyString) , "phases" :: NullOrUndefined (BuildPhases) , "source" :: NullOrUndefined (ProjectSource) , "artifacts" :: NullOrUndefined (BuildArtifacts) , "cache" :: NullOrUndefined (ProjectCache) , "environment" :: NullOrUndefined (ProjectEnvironment) , "logs" :: NullOrUndefined (LogsLocation) , "timeoutInMinutes" :: NullOrUndefined (WrapperInt) , "buildComplete" :: NullOrUndefined (Boolean) , "initiator" :: NullOrUndefined (String) , "vpcConfig" :: NullOrUndefined (VpcConfig) , "networkInterface" :: NullOrUndefined (NetworkInterface) } -> {"id" :: NullOrUndefined (NonEmptyString) , "arn" :: NullOrUndefined (NonEmptyString) , "startTime" :: NullOrUndefined (Types.Timestamp) , "endTime" :: NullOrUndefined (Types.Timestamp) , "currentPhase" :: NullOrUndefined (String) , "buildStatus" :: NullOrUndefined (StatusType) , "sourceVersion" :: NullOrUndefined (NonEmptyString) , "projectName" :: NullOrUndefined (NonEmptyString) , "phases" :: NullOrUndefined (BuildPhases) , "source" :: NullOrUndefined (ProjectSource) , "artifacts" :: NullOrUndefined (BuildArtifacts) , "cache" :: NullOrUndefined (ProjectCache) , "environment" :: NullOrUndefined (ProjectEnvironment) , "logs" :: NullOrUndefined (LogsLocation) , "timeoutInMinutes" :: NullOrUndefined (WrapperInt) , "buildComplete" :: NullOrUndefined (Boolean) , "initiator" :: NullOrUndefined (String) , "vpcConfig" :: NullOrUndefined (VpcConfig) , "networkInterface" :: NullOrUndefined (NetworkInterface) } ) -> Build
-newBuild'  customize = (Build <<< customize) { "arn": (NullOrUndefined Nothing), "artifacts": (NullOrUndefined Nothing), "buildComplete": (NullOrUndefined Nothing), "buildStatus": (NullOrUndefined Nothing), "cache": (NullOrUndefined Nothing), "currentPhase": (NullOrUndefined Nothing), "endTime": (NullOrUndefined Nothing), "environment": (NullOrUndefined Nothing), "id": (NullOrUndefined Nothing), "initiator": (NullOrUndefined Nothing), "logs": (NullOrUndefined Nothing), "networkInterface": (NullOrUndefined Nothing), "phases": (NullOrUndefined Nothing), "projectName": (NullOrUndefined Nothing), "source": (NullOrUndefined Nothing), "sourceVersion": (NullOrUndefined Nothing), "startTime": (NullOrUndefined Nothing), "timeoutInMinutes": (NullOrUndefined Nothing), "vpcConfig": (NullOrUndefined Nothing) }
+newBuild' :: ( { "id" :: Maybe (NonEmptyString) , "arn" :: Maybe (NonEmptyString) , "startTime" :: Maybe (Types.Timestamp) , "endTime" :: Maybe (Types.Timestamp) , "currentPhase" :: Maybe (String) , "buildStatus" :: Maybe (StatusType) , "sourceVersion" :: Maybe (NonEmptyString) , "projectName" :: Maybe (NonEmptyString) , "phases" :: Maybe (BuildPhases) , "source" :: Maybe (ProjectSource) , "artifacts" :: Maybe (BuildArtifacts) , "cache" :: Maybe (ProjectCache) , "environment" :: Maybe (ProjectEnvironment) , "logs" :: Maybe (LogsLocation) , "timeoutInMinutes" :: Maybe (WrapperInt) , "buildComplete" :: Maybe (Boolean) , "initiator" :: Maybe (String) , "vpcConfig" :: Maybe (VpcConfig) , "networkInterface" :: Maybe (NetworkInterface) } -> {"id" :: Maybe (NonEmptyString) , "arn" :: Maybe (NonEmptyString) , "startTime" :: Maybe (Types.Timestamp) , "endTime" :: Maybe (Types.Timestamp) , "currentPhase" :: Maybe (String) , "buildStatus" :: Maybe (StatusType) , "sourceVersion" :: Maybe (NonEmptyString) , "projectName" :: Maybe (NonEmptyString) , "phases" :: Maybe (BuildPhases) , "source" :: Maybe (ProjectSource) , "artifacts" :: Maybe (BuildArtifacts) , "cache" :: Maybe (ProjectCache) , "environment" :: Maybe (ProjectEnvironment) , "logs" :: Maybe (LogsLocation) , "timeoutInMinutes" :: Maybe (WrapperInt) , "buildComplete" :: Maybe (Boolean) , "initiator" :: Maybe (String) , "vpcConfig" :: Maybe (VpcConfig) , "networkInterface" :: Maybe (NetworkInterface) } ) -> Build
+newBuild'  customize = (Build <<< customize) { "arn": Nothing, "artifacts": Nothing, "buildComplete": Nothing, "buildStatus": Nothing, "cache": Nothing, "currentPhase": Nothing, "endTime": Nothing, "environment": Nothing, "id": Nothing, "initiator": Nothing, "logs": Nothing, "networkInterface": Nothing, "phases": Nothing, "projectName": Nothing, "source": Nothing, "sourceVersion": Nothing, "startTime": Nothing, "timeoutInMinutes": Nothing, "vpcConfig": Nothing }
 
 
 
 -- | <p>Information about build output artifacts.</p>
 newtype BuildArtifacts = BuildArtifacts 
-  { "location" :: NullOrUndefined (String)
-  , "sha256sum" :: NullOrUndefined (String)
-  , "md5sum" :: NullOrUndefined (String)
+  { "location" :: Maybe (String)
+  , "sha256sum" :: Maybe (String)
+  , "md5sum" :: Maybe (String)
   }
 derive instance newtypeBuildArtifacts :: Newtype BuildArtifacts _
 derive instance repGenericBuildArtifacts :: Generic BuildArtifacts _
@@ -231,12 +230,12 @@ instance encodeBuildArtifacts :: Encode BuildArtifacts where encode = genericEnc
 
 -- | Constructs BuildArtifacts from required parameters
 newBuildArtifacts :: BuildArtifacts
-newBuildArtifacts  = BuildArtifacts { "location": (NullOrUndefined Nothing), "md5sum": (NullOrUndefined Nothing), "sha256sum": (NullOrUndefined Nothing) }
+newBuildArtifacts  = BuildArtifacts { "location": Nothing, "md5sum": Nothing, "sha256sum": Nothing }
 
 -- | Constructs BuildArtifacts's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBuildArtifacts' :: ( { "location" :: NullOrUndefined (String) , "sha256sum" :: NullOrUndefined (String) , "md5sum" :: NullOrUndefined (String) } -> {"location" :: NullOrUndefined (String) , "sha256sum" :: NullOrUndefined (String) , "md5sum" :: NullOrUndefined (String) } ) -> BuildArtifacts
-newBuildArtifacts'  customize = (BuildArtifacts <<< customize) { "location": (NullOrUndefined Nothing), "md5sum": (NullOrUndefined Nothing), "sha256sum": (NullOrUndefined Nothing) }
+newBuildArtifacts' :: ( { "location" :: Maybe (String) , "sha256sum" :: Maybe (String) , "md5sum" :: Maybe (String) } -> {"location" :: Maybe (String) , "sha256sum" :: Maybe (String) , "md5sum" :: Maybe (String) } ) -> BuildArtifacts
+newBuildArtifacts'  customize = (BuildArtifacts <<< customize) { "location": Nothing, "md5sum": Nothing, "sha256sum": Nothing }
 
 
 
@@ -251,8 +250,8 @@ instance encodeBuildIds :: Encode BuildIds where encode = genericEncode options
 
 -- | <p>Information about a build that could not be successfully deleted.</p>
 newtype BuildNotDeleted = BuildNotDeleted 
-  { "id" :: NullOrUndefined (NonEmptyString)
-  , "statusCode" :: NullOrUndefined (String)
+  { "id" :: Maybe (NonEmptyString)
+  , "statusCode" :: Maybe (String)
   }
 derive instance newtypeBuildNotDeleted :: Newtype BuildNotDeleted _
 derive instance repGenericBuildNotDeleted :: Generic BuildNotDeleted _
@@ -262,23 +261,23 @@ instance encodeBuildNotDeleted :: Encode BuildNotDeleted where encode = genericE
 
 -- | Constructs BuildNotDeleted from required parameters
 newBuildNotDeleted :: BuildNotDeleted
-newBuildNotDeleted  = BuildNotDeleted { "id": (NullOrUndefined Nothing), "statusCode": (NullOrUndefined Nothing) }
+newBuildNotDeleted  = BuildNotDeleted { "id": Nothing, "statusCode": Nothing }
 
 -- | Constructs BuildNotDeleted's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBuildNotDeleted' :: ( { "id" :: NullOrUndefined (NonEmptyString) , "statusCode" :: NullOrUndefined (String) } -> {"id" :: NullOrUndefined (NonEmptyString) , "statusCode" :: NullOrUndefined (String) } ) -> BuildNotDeleted
-newBuildNotDeleted'  customize = (BuildNotDeleted <<< customize) { "id": (NullOrUndefined Nothing), "statusCode": (NullOrUndefined Nothing) }
+newBuildNotDeleted' :: ( { "id" :: Maybe (NonEmptyString) , "statusCode" :: Maybe (String) } -> {"id" :: Maybe (NonEmptyString) , "statusCode" :: Maybe (String) } ) -> BuildNotDeleted
+newBuildNotDeleted'  customize = (BuildNotDeleted <<< customize) { "id": Nothing, "statusCode": Nothing }
 
 
 
 -- | <p>Information about a stage for a build.</p>
 newtype BuildPhase = BuildPhase 
-  { "phaseType" :: NullOrUndefined (BuildPhaseType)
-  , "phaseStatus" :: NullOrUndefined (StatusType)
-  , "startTime" :: NullOrUndefined (Types.Timestamp)
-  , "endTime" :: NullOrUndefined (Types.Timestamp)
-  , "durationInSeconds" :: NullOrUndefined (WrapperLong)
-  , "contexts" :: NullOrUndefined (PhaseContexts)
+  { "phaseType" :: Maybe (BuildPhaseType)
+  , "phaseStatus" :: Maybe (StatusType)
+  , "startTime" :: Maybe (Types.Timestamp)
+  , "endTime" :: Maybe (Types.Timestamp)
+  , "durationInSeconds" :: Maybe (WrapperLong)
+  , "contexts" :: Maybe (PhaseContexts)
   }
 derive instance newtypeBuildPhase :: Newtype BuildPhase _
 derive instance repGenericBuildPhase :: Generic BuildPhase _
@@ -288,12 +287,12 @@ instance encodeBuildPhase :: Encode BuildPhase where encode = genericEncode opti
 
 -- | Constructs BuildPhase from required parameters
 newBuildPhase :: BuildPhase
-newBuildPhase  = BuildPhase { "contexts": (NullOrUndefined Nothing), "durationInSeconds": (NullOrUndefined Nothing), "endTime": (NullOrUndefined Nothing), "phaseStatus": (NullOrUndefined Nothing), "phaseType": (NullOrUndefined Nothing), "startTime": (NullOrUndefined Nothing) }
+newBuildPhase  = BuildPhase { "contexts": Nothing, "durationInSeconds": Nothing, "endTime": Nothing, "phaseStatus": Nothing, "phaseType": Nothing, "startTime": Nothing }
 
 -- | Constructs BuildPhase's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBuildPhase' :: ( { "phaseType" :: NullOrUndefined (BuildPhaseType) , "phaseStatus" :: NullOrUndefined (StatusType) , "startTime" :: NullOrUndefined (Types.Timestamp) , "endTime" :: NullOrUndefined (Types.Timestamp) , "durationInSeconds" :: NullOrUndefined (WrapperLong) , "contexts" :: NullOrUndefined (PhaseContexts) } -> {"phaseType" :: NullOrUndefined (BuildPhaseType) , "phaseStatus" :: NullOrUndefined (StatusType) , "startTime" :: NullOrUndefined (Types.Timestamp) , "endTime" :: NullOrUndefined (Types.Timestamp) , "durationInSeconds" :: NullOrUndefined (WrapperLong) , "contexts" :: NullOrUndefined (PhaseContexts) } ) -> BuildPhase
-newBuildPhase'  customize = (BuildPhase <<< customize) { "contexts": (NullOrUndefined Nothing), "durationInSeconds": (NullOrUndefined Nothing), "endTime": (NullOrUndefined Nothing), "phaseStatus": (NullOrUndefined Nothing), "phaseType": (NullOrUndefined Nothing), "startTime": (NullOrUndefined Nothing) }
+newBuildPhase' :: ( { "phaseType" :: Maybe (BuildPhaseType) , "phaseStatus" :: Maybe (StatusType) , "startTime" :: Maybe (Types.Timestamp) , "endTime" :: Maybe (Types.Timestamp) , "durationInSeconds" :: Maybe (WrapperLong) , "contexts" :: Maybe (PhaseContexts) } -> {"phaseType" :: Maybe (BuildPhaseType) , "phaseStatus" :: Maybe (StatusType) , "startTime" :: Maybe (Types.Timestamp) , "endTime" :: Maybe (Types.Timestamp) , "durationInSeconds" :: Maybe (WrapperLong) , "contexts" :: Maybe (PhaseContexts) } ) -> BuildPhase
+newBuildPhase'  customize = (BuildPhase <<< customize) { "contexts": Nothing, "durationInSeconds": Nothing, "endTime": Nothing, "phaseStatus": Nothing, "phaseType": Nothing, "startTime": Nothing }
 
 
 
@@ -353,17 +352,17 @@ instance encodeComputeType :: Encode ComputeType where encode = genericEncode op
 
 newtype CreateProjectInput = CreateProjectInput 
   { "name" :: (ProjectName)
-  , "description" :: NullOrUndefined (ProjectDescription)
+  , "description" :: Maybe (ProjectDescription)
   , "source" :: (ProjectSource)
   , "artifacts" :: (ProjectArtifacts)
-  , "cache" :: NullOrUndefined (ProjectCache)
+  , "cache" :: Maybe (ProjectCache)
   , "environment" :: (ProjectEnvironment)
-  , "serviceRole" :: NullOrUndefined (NonEmptyString)
-  , "timeoutInMinutes" :: NullOrUndefined (TimeOut)
-  , "encryptionKey" :: NullOrUndefined (NonEmptyString)
-  , "tags" :: NullOrUndefined (TagList)
-  , "vpcConfig" :: NullOrUndefined (VpcConfig)
-  , "badgeEnabled" :: NullOrUndefined (WrapperBoolean)
+  , "serviceRole" :: Maybe (NonEmptyString)
+  , "timeoutInMinutes" :: Maybe (TimeOut)
+  , "encryptionKey" :: Maybe (NonEmptyString)
+  , "tags" :: Maybe (TagList)
+  , "vpcConfig" :: Maybe (VpcConfig)
+  , "badgeEnabled" :: Maybe (WrapperBoolean)
   }
 derive instance newtypeCreateProjectInput :: Newtype CreateProjectInput _
 derive instance repGenericCreateProjectInput :: Generic CreateProjectInput _
@@ -373,17 +372,17 @@ instance encodeCreateProjectInput :: Encode CreateProjectInput where encode = ge
 
 -- | Constructs CreateProjectInput from required parameters
 newCreateProjectInput :: ProjectArtifacts -> ProjectEnvironment -> ProjectName -> ProjectSource -> CreateProjectInput
-newCreateProjectInput _artifacts _environment _name _source = CreateProjectInput { "artifacts": _artifacts, "environment": _environment, "name": _name, "source": _source, "badgeEnabled": (NullOrUndefined Nothing), "cache": (NullOrUndefined Nothing), "description": (NullOrUndefined Nothing), "encryptionKey": (NullOrUndefined Nothing), "serviceRole": (NullOrUndefined Nothing), "tags": (NullOrUndefined Nothing), "timeoutInMinutes": (NullOrUndefined Nothing), "vpcConfig": (NullOrUndefined Nothing) }
+newCreateProjectInput _artifacts _environment _name _source = CreateProjectInput { "artifacts": _artifacts, "environment": _environment, "name": _name, "source": _source, "badgeEnabled": Nothing, "cache": Nothing, "description": Nothing, "encryptionKey": Nothing, "serviceRole": Nothing, "tags": Nothing, "timeoutInMinutes": Nothing, "vpcConfig": Nothing }
 
 -- | Constructs CreateProjectInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateProjectInput' :: ProjectArtifacts -> ProjectEnvironment -> ProjectName -> ProjectSource -> ( { "name" :: (ProjectName) , "description" :: NullOrUndefined (ProjectDescription) , "source" :: (ProjectSource) , "artifacts" :: (ProjectArtifacts) , "cache" :: NullOrUndefined (ProjectCache) , "environment" :: (ProjectEnvironment) , "serviceRole" :: NullOrUndefined (NonEmptyString) , "timeoutInMinutes" :: NullOrUndefined (TimeOut) , "encryptionKey" :: NullOrUndefined (NonEmptyString) , "tags" :: NullOrUndefined (TagList) , "vpcConfig" :: NullOrUndefined (VpcConfig) , "badgeEnabled" :: NullOrUndefined (WrapperBoolean) } -> {"name" :: (ProjectName) , "description" :: NullOrUndefined (ProjectDescription) , "source" :: (ProjectSource) , "artifacts" :: (ProjectArtifacts) , "cache" :: NullOrUndefined (ProjectCache) , "environment" :: (ProjectEnvironment) , "serviceRole" :: NullOrUndefined (NonEmptyString) , "timeoutInMinutes" :: NullOrUndefined (TimeOut) , "encryptionKey" :: NullOrUndefined (NonEmptyString) , "tags" :: NullOrUndefined (TagList) , "vpcConfig" :: NullOrUndefined (VpcConfig) , "badgeEnabled" :: NullOrUndefined (WrapperBoolean) } ) -> CreateProjectInput
-newCreateProjectInput' _artifacts _environment _name _source customize = (CreateProjectInput <<< customize) { "artifacts": _artifacts, "environment": _environment, "name": _name, "source": _source, "badgeEnabled": (NullOrUndefined Nothing), "cache": (NullOrUndefined Nothing), "description": (NullOrUndefined Nothing), "encryptionKey": (NullOrUndefined Nothing), "serviceRole": (NullOrUndefined Nothing), "tags": (NullOrUndefined Nothing), "timeoutInMinutes": (NullOrUndefined Nothing), "vpcConfig": (NullOrUndefined Nothing) }
+newCreateProjectInput' :: ProjectArtifacts -> ProjectEnvironment -> ProjectName -> ProjectSource -> ( { "name" :: (ProjectName) , "description" :: Maybe (ProjectDescription) , "source" :: (ProjectSource) , "artifacts" :: (ProjectArtifacts) , "cache" :: Maybe (ProjectCache) , "environment" :: (ProjectEnvironment) , "serviceRole" :: Maybe (NonEmptyString) , "timeoutInMinutes" :: Maybe (TimeOut) , "encryptionKey" :: Maybe (NonEmptyString) , "tags" :: Maybe (TagList) , "vpcConfig" :: Maybe (VpcConfig) , "badgeEnabled" :: Maybe (WrapperBoolean) } -> {"name" :: (ProjectName) , "description" :: Maybe (ProjectDescription) , "source" :: (ProjectSource) , "artifacts" :: (ProjectArtifacts) , "cache" :: Maybe (ProjectCache) , "environment" :: (ProjectEnvironment) , "serviceRole" :: Maybe (NonEmptyString) , "timeoutInMinutes" :: Maybe (TimeOut) , "encryptionKey" :: Maybe (NonEmptyString) , "tags" :: Maybe (TagList) , "vpcConfig" :: Maybe (VpcConfig) , "badgeEnabled" :: Maybe (WrapperBoolean) } ) -> CreateProjectInput
+newCreateProjectInput' _artifacts _environment _name _source customize = (CreateProjectInput <<< customize) { "artifacts": _artifacts, "environment": _environment, "name": _name, "source": _source, "badgeEnabled": Nothing, "cache": Nothing, "description": Nothing, "encryptionKey": Nothing, "serviceRole": Nothing, "tags": Nothing, "timeoutInMinutes": Nothing, "vpcConfig": Nothing }
 
 
 
 newtype CreateProjectOutput = CreateProjectOutput 
-  { "project" :: NullOrUndefined (Project)
+  { "project" :: Maybe (Project)
   }
 derive instance newtypeCreateProjectOutput :: Newtype CreateProjectOutput _
 derive instance repGenericCreateProjectOutput :: Generic CreateProjectOutput _
@@ -393,12 +392,12 @@ instance encodeCreateProjectOutput :: Encode CreateProjectOutput where encode = 
 
 -- | Constructs CreateProjectOutput from required parameters
 newCreateProjectOutput :: CreateProjectOutput
-newCreateProjectOutput  = CreateProjectOutput { "project": (NullOrUndefined Nothing) }
+newCreateProjectOutput  = CreateProjectOutput { "project": Nothing }
 
 -- | Constructs CreateProjectOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateProjectOutput' :: ( { "project" :: NullOrUndefined (Project) } -> {"project" :: NullOrUndefined (Project) } ) -> CreateProjectOutput
-newCreateProjectOutput'  customize = (CreateProjectOutput <<< customize) { "project": (NullOrUndefined Nothing) }
+newCreateProjectOutput' :: ( { "project" :: Maybe (Project) } -> {"project" :: Maybe (Project) } ) -> CreateProjectOutput
+newCreateProjectOutput'  customize = (CreateProjectOutput <<< customize) { "project": Nothing }
 
 
 
@@ -423,7 +422,7 @@ newCreateWebhookInput' _projectName customize = (CreateWebhookInput <<< customiz
 
 
 newtype CreateWebhookOutput = CreateWebhookOutput 
-  { "webhook" :: NullOrUndefined (Webhook)
+  { "webhook" :: Maybe (Webhook)
   }
 derive instance newtypeCreateWebhookOutput :: Newtype CreateWebhookOutput _
 derive instance repGenericCreateWebhookOutput :: Generic CreateWebhookOutput _
@@ -433,12 +432,12 @@ instance encodeCreateWebhookOutput :: Encode CreateWebhookOutput where encode = 
 
 -- | Constructs CreateWebhookOutput from required parameters
 newCreateWebhookOutput :: CreateWebhookOutput
-newCreateWebhookOutput  = CreateWebhookOutput { "webhook": (NullOrUndefined Nothing) }
+newCreateWebhookOutput  = CreateWebhookOutput { "webhook": Nothing }
 
 -- | Constructs CreateWebhookOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateWebhookOutput' :: ( { "webhook" :: NullOrUndefined (Webhook) } -> {"webhook" :: NullOrUndefined (Webhook) } ) -> CreateWebhookOutput
-newCreateWebhookOutput'  customize = (CreateWebhookOutput <<< customize) { "webhook": (NullOrUndefined Nothing) }
+newCreateWebhookOutput' :: ( { "webhook" :: Maybe (Webhook) } -> {"webhook" :: Maybe (Webhook) } ) -> CreateWebhookOutput
+newCreateWebhookOutput'  customize = (CreateWebhookOutput <<< customize) { "webhook": Nothing }
 
 
 
@@ -502,9 +501,9 @@ instance encodeDeleteWebhookOutput :: Encode DeleteWebhookOutput where encode = 
 
 -- | <p>Information about a Docker image that is managed by AWS CodeBuild.</p>
 newtype EnvironmentImage = EnvironmentImage 
-  { "name" :: NullOrUndefined (String)
-  , "description" :: NullOrUndefined (String)
-  , "versions" :: NullOrUndefined (ImageVersions)
+  { "name" :: Maybe (String)
+  , "description" :: Maybe (String)
+  , "versions" :: Maybe (ImageVersions)
   }
 derive instance newtypeEnvironmentImage :: Newtype EnvironmentImage _
 derive instance repGenericEnvironmentImage :: Generic EnvironmentImage _
@@ -514,12 +513,12 @@ instance encodeEnvironmentImage :: Encode EnvironmentImage where encode = generi
 
 -- | Constructs EnvironmentImage from required parameters
 newEnvironmentImage :: EnvironmentImage
-newEnvironmentImage  = EnvironmentImage { "description": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing), "versions": (NullOrUndefined Nothing) }
+newEnvironmentImage  = EnvironmentImage { "description": Nothing, "name": Nothing, "versions": Nothing }
 
 -- | Constructs EnvironmentImage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEnvironmentImage' :: ( { "name" :: NullOrUndefined (String) , "description" :: NullOrUndefined (String) , "versions" :: NullOrUndefined (ImageVersions) } -> {"name" :: NullOrUndefined (String) , "description" :: NullOrUndefined (String) , "versions" :: NullOrUndefined (ImageVersions) } ) -> EnvironmentImage
-newEnvironmentImage'  customize = (EnvironmentImage <<< customize) { "description": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing), "versions": (NullOrUndefined Nothing) }
+newEnvironmentImage' :: ( { "name" :: Maybe (String) , "description" :: Maybe (String) , "versions" :: Maybe (ImageVersions) } -> {"name" :: Maybe (String) , "description" :: Maybe (String) , "versions" :: Maybe (ImageVersions) } ) -> EnvironmentImage
+newEnvironmentImage'  customize = (EnvironmentImage <<< customize) { "description": Nothing, "name": Nothing, "versions": Nothing }
 
 
 
@@ -534,8 +533,8 @@ instance encodeEnvironmentImages :: Encode EnvironmentImages where encode = gene
 
 -- | <p>A set of Docker images that are related by programming language and are managed by AWS CodeBuild.</p>
 newtype EnvironmentLanguage = EnvironmentLanguage 
-  { "language" :: NullOrUndefined (LanguageType)
-  , "images" :: NullOrUndefined (EnvironmentImages)
+  { "language" :: Maybe (LanguageType)
+  , "images" :: Maybe (EnvironmentImages)
   }
 derive instance newtypeEnvironmentLanguage :: Newtype EnvironmentLanguage _
 derive instance repGenericEnvironmentLanguage :: Generic EnvironmentLanguage _
@@ -545,12 +544,12 @@ instance encodeEnvironmentLanguage :: Encode EnvironmentLanguage where encode = 
 
 -- | Constructs EnvironmentLanguage from required parameters
 newEnvironmentLanguage :: EnvironmentLanguage
-newEnvironmentLanguage  = EnvironmentLanguage { "images": (NullOrUndefined Nothing), "language": (NullOrUndefined Nothing) }
+newEnvironmentLanguage  = EnvironmentLanguage { "images": Nothing, "language": Nothing }
 
 -- | Constructs EnvironmentLanguage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEnvironmentLanguage' :: ( { "language" :: NullOrUndefined (LanguageType) , "images" :: NullOrUndefined (EnvironmentImages) } -> {"language" :: NullOrUndefined (LanguageType) , "images" :: NullOrUndefined (EnvironmentImages) } ) -> EnvironmentLanguage
-newEnvironmentLanguage'  customize = (EnvironmentLanguage <<< customize) { "images": (NullOrUndefined Nothing), "language": (NullOrUndefined Nothing) }
+newEnvironmentLanguage' :: ( { "language" :: Maybe (LanguageType) , "images" :: Maybe (EnvironmentImages) } -> {"language" :: Maybe (LanguageType) , "images" :: Maybe (EnvironmentImages) } ) -> EnvironmentLanguage
+newEnvironmentLanguage'  customize = (EnvironmentLanguage <<< customize) { "images": Nothing, "language": Nothing }
 
 
 
@@ -565,8 +564,8 @@ instance encodeEnvironmentLanguages :: Encode EnvironmentLanguages where encode 
 
 -- | <p>A set of Docker images that are related by platform and are managed by AWS CodeBuild.</p>
 newtype EnvironmentPlatform = EnvironmentPlatform 
-  { "platform" :: NullOrUndefined (PlatformType)
-  , "languages" :: NullOrUndefined (EnvironmentLanguages)
+  { "platform" :: Maybe (PlatformType)
+  , "languages" :: Maybe (EnvironmentLanguages)
   }
 derive instance newtypeEnvironmentPlatform :: Newtype EnvironmentPlatform _
 derive instance repGenericEnvironmentPlatform :: Generic EnvironmentPlatform _
@@ -576,12 +575,12 @@ instance encodeEnvironmentPlatform :: Encode EnvironmentPlatform where encode = 
 
 -- | Constructs EnvironmentPlatform from required parameters
 newEnvironmentPlatform :: EnvironmentPlatform
-newEnvironmentPlatform  = EnvironmentPlatform { "languages": (NullOrUndefined Nothing), "platform": (NullOrUndefined Nothing) }
+newEnvironmentPlatform  = EnvironmentPlatform { "languages": Nothing, "platform": Nothing }
 
 -- | Constructs EnvironmentPlatform's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEnvironmentPlatform' :: ( { "platform" :: NullOrUndefined (PlatformType) , "languages" :: NullOrUndefined (EnvironmentLanguages) } -> {"platform" :: NullOrUndefined (PlatformType) , "languages" :: NullOrUndefined (EnvironmentLanguages) } ) -> EnvironmentPlatform
-newEnvironmentPlatform'  customize = (EnvironmentPlatform <<< customize) { "languages": (NullOrUndefined Nothing), "platform": (NullOrUndefined Nothing) }
+newEnvironmentPlatform' :: ( { "platform" :: Maybe (PlatformType) , "languages" :: Maybe (EnvironmentLanguages) } -> {"platform" :: Maybe (PlatformType) , "languages" :: Maybe (EnvironmentLanguages) } ) -> EnvironmentPlatform
+newEnvironmentPlatform'  customize = (EnvironmentPlatform <<< customize) { "languages": Nothing, "platform": Nothing }
 
 
 
@@ -607,7 +606,7 @@ instance encodeEnvironmentType :: Encode EnvironmentType where encode = genericE
 newtype EnvironmentVariable = EnvironmentVariable 
   { "name" :: (NonEmptyString)
   , "value" :: (String)
-  , "type" :: NullOrUndefined (EnvironmentVariableType)
+  , "type" :: Maybe (EnvironmentVariableType)
   }
 derive instance newtypeEnvironmentVariable :: Newtype EnvironmentVariable _
 derive instance repGenericEnvironmentVariable :: Generic EnvironmentVariable _
@@ -617,12 +616,12 @@ instance encodeEnvironmentVariable :: Encode EnvironmentVariable where encode = 
 
 -- | Constructs EnvironmentVariable from required parameters
 newEnvironmentVariable :: NonEmptyString -> String -> EnvironmentVariable
-newEnvironmentVariable _name _value = EnvironmentVariable { "name": _name, "value": _value, "type": (NullOrUndefined Nothing) }
+newEnvironmentVariable _name _value = EnvironmentVariable { "name": _name, "value": _value, "type": Nothing }
 
 -- | Constructs EnvironmentVariable's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEnvironmentVariable' :: NonEmptyString -> String -> ( { "name" :: (NonEmptyString) , "value" :: (String) , "type" :: NullOrUndefined (EnvironmentVariableType) } -> {"name" :: (NonEmptyString) , "value" :: (String) , "type" :: NullOrUndefined (EnvironmentVariableType) } ) -> EnvironmentVariable
-newEnvironmentVariable' _name _value customize = (EnvironmentVariable <<< customize) { "name": _name, "value": _value, "type": (NullOrUndefined Nothing) }
+newEnvironmentVariable' :: NonEmptyString -> String -> ( { "name" :: (NonEmptyString) , "value" :: (String) , "type" :: Maybe (EnvironmentVariableType) } -> {"name" :: (NonEmptyString) , "value" :: (String) , "type" :: Maybe (EnvironmentVariableType) } ) -> EnvironmentVariable
+newEnvironmentVariable' _name _value customize = (EnvironmentVariable <<< customize) { "name": _name, "value": _value, "type": Nothing }
 
 
 
@@ -721,8 +720,8 @@ instance encodeLanguageType :: Encode LanguageType where encode = genericEncode 
 
 newtype ListBuildsForProjectInput = ListBuildsForProjectInput 
   { "projectName" :: (NonEmptyString)
-  , "sortOrder" :: NullOrUndefined (SortOrderType)
-  , "nextToken" :: NullOrUndefined (String)
+  , "sortOrder" :: Maybe (SortOrderType)
+  , "nextToken" :: Maybe (String)
   }
 derive instance newtypeListBuildsForProjectInput :: Newtype ListBuildsForProjectInput _
 derive instance repGenericListBuildsForProjectInput :: Generic ListBuildsForProjectInput _
@@ -732,18 +731,18 @@ instance encodeListBuildsForProjectInput :: Encode ListBuildsForProjectInput whe
 
 -- | Constructs ListBuildsForProjectInput from required parameters
 newListBuildsForProjectInput :: NonEmptyString -> ListBuildsForProjectInput
-newListBuildsForProjectInput _projectName = ListBuildsForProjectInput { "projectName": _projectName, "nextToken": (NullOrUndefined Nothing), "sortOrder": (NullOrUndefined Nothing) }
+newListBuildsForProjectInput _projectName = ListBuildsForProjectInput { "projectName": _projectName, "nextToken": Nothing, "sortOrder": Nothing }
 
 -- | Constructs ListBuildsForProjectInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListBuildsForProjectInput' :: NonEmptyString -> ( { "projectName" :: (NonEmptyString) , "sortOrder" :: NullOrUndefined (SortOrderType) , "nextToken" :: NullOrUndefined (String) } -> {"projectName" :: (NonEmptyString) , "sortOrder" :: NullOrUndefined (SortOrderType) , "nextToken" :: NullOrUndefined (String) } ) -> ListBuildsForProjectInput
-newListBuildsForProjectInput' _projectName customize = (ListBuildsForProjectInput <<< customize) { "projectName": _projectName, "nextToken": (NullOrUndefined Nothing), "sortOrder": (NullOrUndefined Nothing) }
+newListBuildsForProjectInput' :: NonEmptyString -> ( { "projectName" :: (NonEmptyString) , "sortOrder" :: Maybe (SortOrderType) , "nextToken" :: Maybe (String) } -> {"projectName" :: (NonEmptyString) , "sortOrder" :: Maybe (SortOrderType) , "nextToken" :: Maybe (String) } ) -> ListBuildsForProjectInput
+newListBuildsForProjectInput' _projectName customize = (ListBuildsForProjectInput <<< customize) { "projectName": _projectName, "nextToken": Nothing, "sortOrder": Nothing }
 
 
 
 newtype ListBuildsForProjectOutput = ListBuildsForProjectOutput 
-  { "ids" :: NullOrUndefined (BuildIds)
-  , "nextToken" :: NullOrUndefined (String)
+  { "ids" :: Maybe (BuildIds)
+  , "nextToken" :: Maybe (String)
   }
 derive instance newtypeListBuildsForProjectOutput :: Newtype ListBuildsForProjectOutput _
 derive instance repGenericListBuildsForProjectOutput :: Generic ListBuildsForProjectOutput _
@@ -753,18 +752,18 @@ instance encodeListBuildsForProjectOutput :: Encode ListBuildsForProjectOutput w
 
 -- | Constructs ListBuildsForProjectOutput from required parameters
 newListBuildsForProjectOutput :: ListBuildsForProjectOutput
-newListBuildsForProjectOutput  = ListBuildsForProjectOutput { "ids": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListBuildsForProjectOutput  = ListBuildsForProjectOutput { "ids": Nothing, "nextToken": Nothing }
 
 -- | Constructs ListBuildsForProjectOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListBuildsForProjectOutput' :: ( { "ids" :: NullOrUndefined (BuildIds) , "nextToken" :: NullOrUndefined (String) } -> {"ids" :: NullOrUndefined (BuildIds) , "nextToken" :: NullOrUndefined (String) } ) -> ListBuildsForProjectOutput
-newListBuildsForProjectOutput'  customize = (ListBuildsForProjectOutput <<< customize) { "ids": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListBuildsForProjectOutput' :: ( { "ids" :: Maybe (BuildIds) , "nextToken" :: Maybe (String) } -> {"ids" :: Maybe (BuildIds) , "nextToken" :: Maybe (String) } ) -> ListBuildsForProjectOutput
+newListBuildsForProjectOutput'  customize = (ListBuildsForProjectOutput <<< customize) { "ids": Nothing, "nextToken": Nothing }
 
 
 
 newtype ListBuildsInput = ListBuildsInput 
-  { "sortOrder" :: NullOrUndefined (SortOrderType)
-  , "nextToken" :: NullOrUndefined (String)
+  { "sortOrder" :: Maybe (SortOrderType)
+  , "nextToken" :: Maybe (String)
   }
 derive instance newtypeListBuildsInput :: Newtype ListBuildsInput _
 derive instance repGenericListBuildsInput :: Generic ListBuildsInput _
@@ -774,18 +773,18 @@ instance encodeListBuildsInput :: Encode ListBuildsInput where encode = genericE
 
 -- | Constructs ListBuildsInput from required parameters
 newListBuildsInput :: ListBuildsInput
-newListBuildsInput  = ListBuildsInput { "nextToken": (NullOrUndefined Nothing), "sortOrder": (NullOrUndefined Nothing) }
+newListBuildsInput  = ListBuildsInput { "nextToken": Nothing, "sortOrder": Nothing }
 
 -- | Constructs ListBuildsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListBuildsInput' :: ( { "sortOrder" :: NullOrUndefined (SortOrderType) , "nextToken" :: NullOrUndefined (String) } -> {"sortOrder" :: NullOrUndefined (SortOrderType) , "nextToken" :: NullOrUndefined (String) } ) -> ListBuildsInput
-newListBuildsInput'  customize = (ListBuildsInput <<< customize) { "nextToken": (NullOrUndefined Nothing), "sortOrder": (NullOrUndefined Nothing) }
+newListBuildsInput' :: ( { "sortOrder" :: Maybe (SortOrderType) , "nextToken" :: Maybe (String) } -> {"sortOrder" :: Maybe (SortOrderType) , "nextToken" :: Maybe (String) } ) -> ListBuildsInput
+newListBuildsInput'  customize = (ListBuildsInput <<< customize) { "nextToken": Nothing, "sortOrder": Nothing }
 
 
 
 newtype ListBuildsOutput = ListBuildsOutput 
-  { "ids" :: NullOrUndefined (BuildIds)
-  , "nextToken" :: NullOrUndefined (String)
+  { "ids" :: Maybe (BuildIds)
+  , "nextToken" :: Maybe (String)
   }
 derive instance newtypeListBuildsOutput :: Newtype ListBuildsOutput _
 derive instance repGenericListBuildsOutput :: Generic ListBuildsOutput _
@@ -795,12 +794,12 @@ instance encodeListBuildsOutput :: Encode ListBuildsOutput where encode = generi
 
 -- | Constructs ListBuildsOutput from required parameters
 newListBuildsOutput :: ListBuildsOutput
-newListBuildsOutput  = ListBuildsOutput { "ids": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListBuildsOutput  = ListBuildsOutput { "ids": Nothing, "nextToken": Nothing }
 
 -- | Constructs ListBuildsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListBuildsOutput' :: ( { "ids" :: NullOrUndefined (BuildIds) , "nextToken" :: NullOrUndefined (String) } -> {"ids" :: NullOrUndefined (BuildIds) , "nextToken" :: NullOrUndefined (String) } ) -> ListBuildsOutput
-newListBuildsOutput'  customize = (ListBuildsOutput <<< customize) { "ids": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListBuildsOutput' :: ( { "ids" :: Maybe (BuildIds) , "nextToken" :: Maybe (String) } -> {"ids" :: Maybe (BuildIds) , "nextToken" :: Maybe (String) } ) -> ListBuildsOutput
+newListBuildsOutput'  customize = (ListBuildsOutput <<< customize) { "ids": Nothing, "nextToken": Nothing }
 
 
 
@@ -814,7 +813,7 @@ instance encodeListCuratedEnvironmentImagesInput :: Encode ListCuratedEnvironmen
 
 
 newtype ListCuratedEnvironmentImagesOutput = ListCuratedEnvironmentImagesOutput 
-  { "platforms" :: NullOrUndefined (EnvironmentPlatforms)
+  { "platforms" :: Maybe (EnvironmentPlatforms)
   }
 derive instance newtypeListCuratedEnvironmentImagesOutput :: Newtype ListCuratedEnvironmentImagesOutput _
 derive instance repGenericListCuratedEnvironmentImagesOutput :: Generic ListCuratedEnvironmentImagesOutput _
@@ -824,19 +823,19 @@ instance encodeListCuratedEnvironmentImagesOutput :: Encode ListCuratedEnvironme
 
 -- | Constructs ListCuratedEnvironmentImagesOutput from required parameters
 newListCuratedEnvironmentImagesOutput :: ListCuratedEnvironmentImagesOutput
-newListCuratedEnvironmentImagesOutput  = ListCuratedEnvironmentImagesOutput { "platforms": (NullOrUndefined Nothing) }
+newListCuratedEnvironmentImagesOutput  = ListCuratedEnvironmentImagesOutput { "platforms": Nothing }
 
 -- | Constructs ListCuratedEnvironmentImagesOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListCuratedEnvironmentImagesOutput' :: ( { "platforms" :: NullOrUndefined (EnvironmentPlatforms) } -> {"platforms" :: NullOrUndefined (EnvironmentPlatforms) } ) -> ListCuratedEnvironmentImagesOutput
-newListCuratedEnvironmentImagesOutput'  customize = (ListCuratedEnvironmentImagesOutput <<< customize) { "platforms": (NullOrUndefined Nothing) }
+newListCuratedEnvironmentImagesOutput' :: ( { "platforms" :: Maybe (EnvironmentPlatforms) } -> {"platforms" :: Maybe (EnvironmentPlatforms) } ) -> ListCuratedEnvironmentImagesOutput
+newListCuratedEnvironmentImagesOutput'  customize = (ListCuratedEnvironmentImagesOutput <<< customize) { "platforms": Nothing }
 
 
 
 newtype ListProjectsInput = ListProjectsInput 
-  { "sortBy" :: NullOrUndefined (ProjectSortByType)
-  , "sortOrder" :: NullOrUndefined (SortOrderType)
-  , "nextToken" :: NullOrUndefined (NonEmptyString)
+  { "sortBy" :: Maybe (ProjectSortByType)
+  , "sortOrder" :: Maybe (SortOrderType)
+  , "nextToken" :: Maybe (NonEmptyString)
   }
 derive instance newtypeListProjectsInput :: Newtype ListProjectsInput _
 derive instance repGenericListProjectsInput :: Generic ListProjectsInput _
@@ -846,18 +845,18 @@ instance encodeListProjectsInput :: Encode ListProjectsInput where encode = gene
 
 -- | Constructs ListProjectsInput from required parameters
 newListProjectsInput :: ListProjectsInput
-newListProjectsInput  = ListProjectsInput { "nextToken": (NullOrUndefined Nothing), "sortBy": (NullOrUndefined Nothing), "sortOrder": (NullOrUndefined Nothing) }
+newListProjectsInput  = ListProjectsInput { "nextToken": Nothing, "sortBy": Nothing, "sortOrder": Nothing }
 
 -- | Constructs ListProjectsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListProjectsInput' :: ( { "sortBy" :: NullOrUndefined (ProjectSortByType) , "sortOrder" :: NullOrUndefined (SortOrderType) , "nextToken" :: NullOrUndefined (NonEmptyString) } -> {"sortBy" :: NullOrUndefined (ProjectSortByType) , "sortOrder" :: NullOrUndefined (SortOrderType) , "nextToken" :: NullOrUndefined (NonEmptyString) } ) -> ListProjectsInput
-newListProjectsInput'  customize = (ListProjectsInput <<< customize) { "nextToken": (NullOrUndefined Nothing), "sortBy": (NullOrUndefined Nothing), "sortOrder": (NullOrUndefined Nothing) }
+newListProjectsInput' :: ( { "sortBy" :: Maybe (ProjectSortByType) , "sortOrder" :: Maybe (SortOrderType) , "nextToken" :: Maybe (NonEmptyString) } -> {"sortBy" :: Maybe (ProjectSortByType) , "sortOrder" :: Maybe (SortOrderType) , "nextToken" :: Maybe (NonEmptyString) } ) -> ListProjectsInput
+newListProjectsInput'  customize = (ListProjectsInput <<< customize) { "nextToken": Nothing, "sortBy": Nothing, "sortOrder": Nothing }
 
 
 
 newtype ListProjectsOutput = ListProjectsOutput 
-  { "nextToken" :: NullOrUndefined (String)
-  , "projects" :: NullOrUndefined (ProjectNames)
+  { "nextToken" :: Maybe (String)
+  , "projects" :: Maybe (ProjectNames)
   }
 derive instance newtypeListProjectsOutput :: Newtype ListProjectsOutput _
 derive instance repGenericListProjectsOutput :: Generic ListProjectsOutput _
@@ -867,20 +866,20 @@ instance encodeListProjectsOutput :: Encode ListProjectsOutput where encode = ge
 
 -- | Constructs ListProjectsOutput from required parameters
 newListProjectsOutput :: ListProjectsOutput
-newListProjectsOutput  = ListProjectsOutput { "nextToken": (NullOrUndefined Nothing), "projects": (NullOrUndefined Nothing) }
+newListProjectsOutput  = ListProjectsOutput { "nextToken": Nothing, "projects": Nothing }
 
 -- | Constructs ListProjectsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListProjectsOutput' :: ( { "nextToken" :: NullOrUndefined (String) , "projects" :: NullOrUndefined (ProjectNames) } -> {"nextToken" :: NullOrUndefined (String) , "projects" :: NullOrUndefined (ProjectNames) } ) -> ListProjectsOutput
-newListProjectsOutput'  customize = (ListProjectsOutput <<< customize) { "nextToken": (NullOrUndefined Nothing), "projects": (NullOrUndefined Nothing) }
+newListProjectsOutput' :: ( { "nextToken" :: Maybe (String) , "projects" :: Maybe (ProjectNames) } -> {"nextToken" :: Maybe (String) , "projects" :: Maybe (ProjectNames) } ) -> ListProjectsOutput
+newListProjectsOutput'  customize = (ListProjectsOutput <<< customize) { "nextToken": Nothing, "projects": Nothing }
 
 
 
 -- | <p>Information about build logs in Amazon CloudWatch Logs.</p>
 newtype LogsLocation = LogsLocation 
-  { "groupName" :: NullOrUndefined (String)
-  , "streamName" :: NullOrUndefined (String)
-  , "deepLink" :: NullOrUndefined (String)
+  { "groupName" :: Maybe (String)
+  , "streamName" :: Maybe (String)
+  , "deepLink" :: Maybe (String)
   }
 derive instance newtypeLogsLocation :: Newtype LogsLocation _
 derive instance repGenericLogsLocation :: Generic LogsLocation _
@@ -890,19 +889,19 @@ instance encodeLogsLocation :: Encode LogsLocation where encode = genericEncode 
 
 -- | Constructs LogsLocation from required parameters
 newLogsLocation :: LogsLocation
-newLogsLocation  = LogsLocation { "deepLink": (NullOrUndefined Nothing), "groupName": (NullOrUndefined Nothing), "streamName": (NullOrUndefined Nothing) }
+newLogsLocation  = LogsLocation { "deepLink": Nothing, "groupName": Nothing, "streamName": Nothing }
 
 -- | Constructs LogsLocation's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLogsLocation' :: ( { "groupName" :: NullOrUndefined (String) , "streamName" :: NullOrUndefined (String) , "deepLink" :: NullOrUndefined (String) } -> {"groupName" :: NullOrUndefined (String) , "streamName" :: NullOrUndefined (String) , "deepLink" :: NullOrUndefined (String) } ) -> LogsLocation
-newLogsLocation'  customize = (LogsLocation <<< customize) { "deepLink": (NullOrUndefined Nothing), "groupName": (NullOrUndefined Nothing), "streamName": (NullOrUndefined Nothing) }
+newLogsLocation' :: ( { "groupName" :: Maybe (String) , "streamName" :: Maybe (String) , "deepLink" :: Maybe (String) } -> {"groupName" :: Maybe (String) , "streamName" :: Maybe (String) , "deepLink" :: Maybe (String) } ) -> LogsLocation
+newLogsLocation'  customize = (LogsLocation <<< customize) { "deepLink": Nothing, "groupName": Nothing, "streamName": Nothing }
 
 
 
 -- | <p>Describes a network interface.</p>
 newtype NetworkInterface = NetworkInterface 
-  { "subnetId" :: NullOrUndefined (NonEmptyString)
-  , "networkInterfaceId" :: NullOrUndefined (NonEmptyString)
+  { "subnetId" :: Maybe (NonEmptyString)
+  , "networkInterfaceId" :: Maybe (NonEmptyString)
   }
 derive instance newtypeNetworkInterface :: Newtype NetworkInterface _
 derive instance repGenericNetworkInterface :: Generic NetworkInterface _
@@ -912,12 +911,12 @@ instance encodeNetworkInterface :: Encode NetworkInterface where encode = generi
 
 -- | Constructs NetworkInterface from required parameters
 newNetworkInterface :: NetworkInterface
-newNetworkInterface  = NetworkInterface { "networkInterfaceId": (NullOrUndefined Nothing), "subnetId": (NullOrUndefined Nothing) }
+newNetworkInterface  = NetworkInterface { "networkInterfaceId": Nothing, "subnetId": Nothing }
 
 -- | Constructs NetworkInterface's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNetworkInterface' :: ( { "subnetId" :: NullOrUndefined (NonEmptyString) , "networkInterfaceId" :: NullOrUndefined (NonEmptyString) } -> {"subnetId" :: NullOrUndefined (NonEmptyString) , "networkInterfaceId" :: NullOrUndefined (NonEmptyString) } ) -> NetworkInterface
-newNetworkInterface'  customize = (NetworkInterface <<< customize) { "networkInterfaceId": (NullOrUndefined Nothing), "subnetId": (NullOrUndefined Nothing) }
+newNetworkInterface' :: ( { "subnetId" :: Maybe (NonEmptyString) , "networkInterfaceId" :: Maybe (NonEmptyString) } -> {"subnetId" :: Maybe (NonEmptyString) , "networkInterfaceId" :: Maybe (NonEmptyString) } ) -> NetworkInterface
+newNetworkInterface'  customize = (NetworkInterface <<< customize) { "networkInterfaceId": Nothing, "subnetId": Nothing }
 
 
 
@@ -942,8 +941,8 @@ instance encodeOAuthProviderException :: Encode OAuthProviderException where enc
 
 -- | <p>Additional information about a build phase that has an error. You can use this information to help troubleshoot a failed build.</p>
 newtype PhaseContext = PhaseContext 
-  { "statusCode" :: NullOrUndefined (String)
-  , "message" :: NullOrUndefined (String)
+  { "statusCode" :: Maybe (String)
+  , "message" :: Maybe (String)
   }
 derive instance newtypePhaseContext :: Newtype PhaseContext _
 derive instance repGenericPhaseContext :: Generic PhaseContext _
@@ -953,12 +952,12 @@ instance encodePhaseContext :: Encode PhaseContext where encode = genericEncode 
 
 -- | Constructs PhaseContext from required parameters
 newPhaseContext :: PhaseContext
-newPhaseContext  = PhaseContext { "message": (NullOrUndefined Nothing), "statusCode": (NullOrUndefined Nothing) }
+newPhaseContext  = PhaseContext { "message": Nothing, "statusCode": Nothing }
 
 -- | Constructs PhaseContext's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPhaseContext' :: ( { "statusCode" :: NullOrUndefined (String) , "message" :: NullOrUndefined (String) } -> {"statusCode" :: NullOrUndefined (String) , "message" :: NullOrUndefined (String) } ) -> PhaseContext
-newPhaseContext'  customize = (PhaseContext <<< customize) { "message": (NullOrUndefined Nothing), "statusCode": (NullOrUndefined Nothing) }
+newPhaseContext' :: ( { "statusCode" :: Maybe (String) , "message" :: Maybe (String) } -> {"statusCode" :: Maybe (String) , "message" :: Maybe (String) } ) -> PhaseContext
+newPhaseContext'  customize = (PhaseContext <<< customize) { "message": Nothing, "statusCode": Nothing }
 
 
 
@@ -982,22 +981,22 @@ instance encodePlatformType :: Encode PlatformType where encode = genericEncode 
 
 -- | <p>Information about a build project.</p>
 newtype Project = Project 
-  { "name" :: NullOrUndefined (ProjectName)
-  , "arn" :: NullOrUndefined (String)
-  , "description" :: NullOrUndefined (ProjectDescription)
-  , "source" :: NullOrUndefined (ProjectSource)
-  , "artifacts" :: NullOrUndefined (ProjectArtifacts)
-  , "cache" :: NullOrUndefined (ProjectCache)
-  , "environment" :: NullOrUndefined (ProjectEnvironment)
-  , "serviceRole" :: NullOrUndefined (NonEmptyString)
-  , "timeoutInMinutes" :: NullOrUndefined (TimeOut)
-  , "encryptionKey" :: NullOrUndefined (NonEmptyString)
-  , "tags" :: NullOrUndefined (TagList)
-  , "created" :: NullOrUndefined (Types.Timestamp)
-  , "lastModified" :: NullOrUndefined (Types.Timestamp)
-  , "webhook" :: NullOrUndefined (Webhook)
-  , "vpcConfig" :: NullOrUndefined (VpcConfig)
-  , "badge" :: NullOrUndefined (ProjectBadge)
+  { "name" :: Maybe (ProjectName)
+  , "arn" :: Maybe (String)
+  , "description" :: Maybe (ProjectDescription)
+  , "source" :: Maybe (ProjectSource)
+  , "artifacts" :: Maybe (ProjectArtifacts)
+  , "cache" :: Maybe (ProjectCache)
+  , "environment" :: Maybe (ProjectEnvironment)
+  , "serviceRole" :: Maybe (NonEmptyString)
+  , "timeoutInMinutes" :: Maybe (TimeOut)
+  , "encryptionKey" :: Maybe (NonEmptyString)
+  , "tags" :: Maybe (TagList)
+  , "created" :: Maybe (Types.Timestamp)
+  , "lastModified" :: Maybe (Types.Timestamp)
+  , "webhook" :: Maybe (Webhook)
+  , "vpcConfig" :: Maybe (VpcConfig)
+  , "badge" :: Maybe (ProjectBadge)
   }
 derive instance newtypeProject :: Newtype Project _
 derive instance repGenericProject :: Generic Project _
@@ -1007,23 +1006,23 @@ instance encodeProject :: Encode Project where encode = genericEncode options
 
 -- | Constructs Project from required parameters
 newProject :: Project
-newProject  = Project { "arn": (NullOrUndefined Nothing), "artifacts": (NullOrUndefined Nothing), "badge": (NullOrUndefined Nothing), "cache": (NullOrUndefined Nothing), "created": (NullOrUndefined Nothing), "description": (NullOrUndefined Nothing), "encryptionKey": (NullOrUndefined Nothing), "environment": (NullOrUndefined Nothing), "lastModified": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing), "serviceRole": (NullOrUndefined Nothing), "source": (NullOrUndefined Nothing), "tags": (NullOrUndefined Nothing), "timeoutInMinutes": (NullOrUndefined Nothing), "vpcConfig": (NullOrUndefined Nothing), "webhook": (NullOrUndefined Nothing) }
+newProject  = Project { "arn": Nothing, "artifacts": Nothing, "badge": Nothing, "cache": Nothing, "created": Nothing, "description": Nothing, "encryptionKey": Nothing, "environment": Nothing, "lastModified": Nothing, "name": Nothing, "serviceRole": Nothing, "source": Nothing, "tags": Nothing, "timeoutInMinutes": Nothing, "vpcConfig": Nothing, "webhook": Nothing }
 
 -- | Constructs Project's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newProject' :: ( { "name" :: NullOrUndefined (ProjectName) , "arn" :: NullOrUndefined (String) , "description" :: NullOrUndefined (ProjectDescription) , "source" :: NullOrUndefined (ProjectSource) , "artifacts" :: NullOrUndefined (ProjectArtifacts) , "cache" :: NullOrUndefined (ProjectCache) , "environment" :: NullOrUndefined (ProjectEnvironment) , "serviceRole" :: NullOrUndefined (NonEmptyString) , "timeoutInMinutes" :: NullOrUndefined (TimeOut) , "encryptionKey" :: NullOrUndefined (NonEmptyString) , "tags" :: NullOrUndefined (TagList) , "created" :: NullOrUndefined (Types.Timestamp) , "lastModified" :: NullOrUndefined (Types.Timestamp) , "webhook" :: NullOrUndefined (Webhook) , "vpcConfig" :: NullOrUndefined (VpcConfig) , "badge" :: NullOrUndefined (ProjectBadge) } -> {"name" :: NullOrUndefined (ProjectName) , "arn" :: NullOrUndefined (String) , "description" :: NullOrUndefined (ProjectDescription) , "source" :: NullOrUndefined (ProjectSource) , "artifacts" :: NullOrUndefined (ProjectArtifacts) , "cache" :: NullOrUndefined (ProjectCache) , "environment" :: NullOrUndefined (ProjectEnvironment) , "serviceRole" :: NullOrUndefined (NonEmptyString) , "timeoutInMinutes" :: NullOrUndefined (TimeOut) , "encryptionKey" :: NullOrUndefined (NonEmptyString) , "tags" :: NullOrUndefined (TagList) , "created" :: NullOrUndefined (Types.Timestamp) , "lastModified" :: NullOrUndefined (Types.Timestamp) , "webhook" :: NullOrUndefined (Webhook) , "vpcConfig" :: NullOrUndefined (VpcConfig) , "badge" :: NullOrUndefined (ProjectBadge) } ) -> Project
-newProject'  customize = (Project <<< customize) { "arn": (NullOrUndefined Nothing), "artifacts": (NullOrUndefined Nothing), "badge": (NullOrUndefined Nothing), "cache": (NullOrUndefined Nothing), "created": (NullOrUndefined Nothing), "description": (NullOrUndefined Nothing), "encryptionKey": (NullOrUndefined Nothing), "environment": (NullOrUndefined Nothing), "lastModified": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing), "serviceRole": (NullOrUndefined Nothing), "source": (NullOrUndefined Nothing), "tags": (NullOrUndefined Nothing), "timeoutInMinutes": (NullOrUndefined Nothing), "vpcConfig": (NullOrUndefined Nothing), "webhook": (NullOrUndefined Nothing) }
+newProject' :: ( { "name" :: Maybe (ProjectName) , "arn" :: Maybe (String) , "description" :: Maybe (ProjectDescription) , "source" :: Maybe (ProjectSource) , "artifacts" :: Maybe (ProjectArtifacts) , "cache" :: Maybe (ProjectCache) , "environment" :: Maybe (ProjectEnvironment) , "serviceRole" :: Maybe (NonEmptyString) , "timeoutInMinutes" :: Maybe (TimeOut) , "encryptionKey" :: Maybe (NonEmptyString) , "tags" :: Maybe (TagList) , "created" :: Maybe (Types.Timestamp) , "lastModified" :: Maybe (Types.Timestamp) , "webhook" :: Maybe (Webhook) , "vpcConfig" :: Maybe (VpcConfig) , "badge" :: Maybe (ProjectBadge) } -> {"name" :: Maybe (ProjectName) , "arn" :: Maybe (String) , "description" :: Maybe (ProjectDescription) , "source" :: Maybe (ProjectSource) , "artifacts" :: Maybe (ProjectArtifacts) , "cache" :: Maybe (ProjectCache) , "environment" :: Maybe (ProjectEnvironment) , "serviceRole" :: Maybe (NonEmptyString) , "timeoutInMinutes" :: Maybe (TimeOut) , "encryptionKey" :: Maybe (NonEmptyString) , "tags" :: Maybe (TagList) , "created" :: Maybe (Types.Timestamp) , "lastModified" :: Maybe (Types.Timestamp) , "webhook" :: Maybe (Webhook) , "vpcConfig" :: Maybe (VpcConfig) , "badge" :: Maybe (ProjectBadge) } ) -> Project
+newProject'  customize = (Project <<< customize) { "arn": Nothing, "artifacts": Nothing, "badge": Nothing, "cache": Nothing, "created": Nothing, "description": Nothing, "encryptionKey": Nothing, "environment": Nothing, "lastModified": Nothing, "name": Nothing, "serviceRole": Nothing, "source": Nothing, "tags": Nothing, "timeoutInMinutes": Nothing, "vpcConfig": Nothing, "webhook": Nothing }
 
 
 
 -- | <p>Information about the build output artifacts for the build project.</p>
 newtype ProjectArtifacts = ProjectArtifacts 
   { "type" :: (ArtifactsType)
-  , "location" :: NullOrUndefined (String)
-  , "path" :: NullOrUndefined (String)
-  , "namespaceType" :: NullOrUndefined (ArtifactNamespace)
-  , "name" :: NullOrUndefined (String)
-  , "packaging" :: NullOrUndefined (ArtifactPackaging)
+  , "location" :: Maybe (String)
+  , "path" :: Maybe (String)
+  , "namespaceType" :: Maybe (ArtifactNamespace)
+  , "name" :: Maybe (String)
+  , "packaging" :: Maybe (ArtifactPackaging)
   }
 derive instance newtypeProjectArtifacts :: Newtype ProjectArtifacts _
 derive instance repGenericProjectArtifacts :: Generic ProjectArtifacts _
@@ -1033,19 +1032,19 @@ instance encodeProjectArtifacts :: Encode ProjectArtifacts where encode = generi
 
 -- | Constructs ProjectArtifacts from required parameters
 newProjectArtifacts :: ArtifactsType -> ProjectArtifacts
-newProjectArtifacts _type = ProjectArtifacts { "type": _type, "location": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing), "namespaceType": (NullOrUndefined Nothing), "packaging": (NullOrUndefined Nothing), "path": (NullOrUndefined Nothing) }
+newProjectArtifacts _type = ProjectArtifacts { "type": _type, "location": Nothing, "name": Nothing, "namespaceType": Nothing, "packaging": Nothing, "path": Nothing }
 
 -- | Constructs ProjectArtifacts's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newProjectArtifacts' :: ArtifactsType -> ( { "type" :: (ArtifactsType) , "location" :: NullOrUndefined (String) , "path" :: NullOrUndefined (String) , "namespaceType" :: NullOrUndefined (ArtifactNamespace) , "name" :: NullOrUndefined (String) , "packaging" :: NullOrUndefined (ArtifactPackaging) } -> {"type" :: (ArtifactsType) , "location" :: NullOrUndefined (String) , "path" :: NullOrUndefined (String) , "namespaceType" :: NullOrUndefined (ArtifactNamespace) , "name" :: NullOrUndefined (String) , "packaging" :: NullOrUndefined (ArtifactPackaging) } ) -> ProjectArtifacts
-newProjectArtifacts' _type customize = (ProjectArtifacts <<< customize) { "type": _type, "location": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing), "namespaceType": (NullOrUndefined Nothing), "packaging": (NullOrUndefined Nothing), "path": (NullOrUndefined Nothing) }
+newProjectArtifacts' :: ArtifactsType -> ( { "type" :: (ArtifactsType) , "location" :: Maybe (String) , "path" :: Maybe (String) , "namespaceType" :: Maybe (ArtifactNamespace) , "name" :: Maybe (String) , "packaging" :: Maybe (ArtifactPackaging) } -> {"type" :: (ArtifactsType) , "location" :: Maybe (String) , "path" :: Maybe (String) , "namespaceType" :: Maybe (ArtifactNamespace) , "name" :: Maybe (String) , "packaging" :: Maybe (ArtifactPackaging) } ) -> ProjectArtifacts
+newProjectArtifacts' _type customize = (ProjectArtifacts <<< customize) { "type": _type, "location": Nothing, "name": Nothing, "namespaceType": Nothing, "packaging": Nothing, "path": Nothing }
 
 
 
 -- | <p>Information about the build badge for the build project.</p>
 newtype ProjectBadge = ProjectBadge 
-  { "badgeEnabled" :: NullOrUndefined (Boolean)
-  , "badgeRequestUrl" :: NullOrUndefined (String)
+  { "badgeEnabled" :: Maybe (Boolean)
+  , "badgeRequestUrl" :: Maybe (String)
   }
 derive instance newtypeProjectBadge :: Newtype ProjectBadge _
 derive instance repGenericProjectBadge :: Generic ProjectBadge _
@@ -1055,19 +1054,19 @@ instance encodeProjectBadge :: Encode ProjectBadge where encode = genericEncode 
 
 -- | Constructs ProjectBadge from required parameters
 newProjectBadge :: ProjectBadge
-newProjectBadge  = ProjectBadge { "badgeEnabled": (NullOrUndefined Nothing), "badgeRequestUrl": (NullOrUndefined Nothing) }
+newProjectBadge  = ProjectBadge { "badgeEnabled": Nothing, "badgeRequestUrl": Nothing }
 
 -- | Constructs ProjectBadge's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newProjectBadge' :: ( { "badgeEnabled" :: NullOrUndefined (Boolean) , "badgeRequestUrl" :: NullOrUndefined (String) } -> {"badgeEnabled" :: NullOrUndefined (Boolean) , "badgeRequestUrl" :: NullOrUndefined (String) } ) -> ProjectBadge
-newProjectBadge'  customize = (ProjectBadge <<< customize) { "badgeEnabled": (NullOrUndefined Nothing), "badgeRequestUrl": (NullOrUndefined Nothing) }
+newProjectBadge' :: ( { "badgeEnabled" :: Maybe (Boolean) , "badgeRequestUrl" :: Maybe (String) } -> {"badgeEnabled" :: Maybe (Boolean) , "badgeRequestUrl" :: Maybe (String) } ) -> ProjectBadge
+newProjectBadge'  customize = (ProjectBadge <<< customize) { "badgeEnabled": Nothing, "badgeRequestUrl": Nothing }
 
 
 
 -- | <p>Information about the cache for the build project.</p>
 newtype ProjectCache = ProjectCache 
   { "type" :: (CacheType)
-  , "location" :: NullOrUndefined (String)
+  , "location" :: Maybe (String)
   }
 derive instance newtypeProjectCache :: Newtype ProjectCache _
 derive instance repGenericProjectCache :: Generic ProjectCache _
@@ -1077,12 +1076,12 @@ instance encodeProjectCache :: Encode ProjectCache where encode = genericEncode 
 
 -- | Constructs ProjectCache from required parameters
 newProjectCache :: CacheType -> ProjectCache
-newProjectCache _type = ProjectCache { "type": _type, "location": (NullOrUndefined Nothing) }
+newProjectCache _type = ProjectCache { "type": _type, "location": Nothing }
 
 -- | Constructs ProjectCache's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newProjectCache' :: CacheType -> ( { "type" :: (CacheType) , "location" :: NullOrUndefined (String) } -> {"type" :: (CacheType) , "location" :: NullOrUndefined (String) } ) -> ProjectCache
-newProjectCache' _type customize = (ProjectCache <<< customize) { "type": _type, "location": (NullOrUndefined Nothing) }
+newProjectCache' :: CacheType -> ( { "type" :: (CacheType) , "location" :: Maybe (String) } -> {"type" :: (CacheType) , "location" :: Maybe (String) } ) -> ProjectCache
+newProjectCache' _type customize = (ProjectCache <<< customize) { "type": _type, "location": Nothing }
 
 
 
@@ -1100,9 +1099,9 @@ newtype ProjectEnvironment = ProjectEnvironment
   { "type" :: (EnvironmentType)
   , "image" :: (NonEmptyString)
   , "computeType" :: (ComputeType)
-  , "environmentVariables" :: NullOrUndefined (EnvironmentVariables)
-  , "privilegedMode" :: NullOrUndefined (WrapperBoolean)
-  , "certificate" :: NullOrUndefined (String)
+  , "environmentVariables" :: Maybe (EnvironmentVariables)
+  , "privilegedMode" :: Maybe (WrapperBoolean)
+  , "certificate" :: Maybe (String)
   }
 derive instance newtypeProjectEnvironment :: Newtype ProjectEnvironment _
 derive instance repGenericProjectEnvironment :: Generic ProjectEnvironment _
@@ -1112,12 +1111,12 @@ instance encodeProjectEnvironment :: Encode ProjectEnvironment where encode = ge
 
 -- | Constructs ProjectEnvironment from required parameters
 newProjectEnvironment :: ComputeType -> NonEmptyString -> EnvironmentType -> ProjectEnvironment
-newProjectEnvironment _computeType _image _type = ProjectEnvironment { "computeType": _computeType, "image": _image, "type": _type, "certificate": (NullOrUndefined Nothing), "environmentVariables": (NullOrUndefined Nothing), "privilegedMode": (NullOrUndefined Nothing) }
+newProjectEnvironment _computeType _image _type = ProjectEnvironment { "computeType": _computeType, "image": _image, "type": _type, "certificate": Nothing, "environmentVariables": Nothing, "privilegedMode": Nothing }
 
 -- | Constructs ProjectEnvironment's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newProjectEnvironment' :: ComputeType -> NonEmptyString -> EnvironmentType -> ( { "type" :: (EnvironmentType) , "image" :: (NonEmptyString) , "computeType" :: (ComputeType) , "environmentVariables" :: NullOrUndefined (EnvironmentVariables) , "privilegedMode" :: NullOrUndefined (WrapperBoolean) , "certificate" :: NullOrUndefined (String) } -> {"type" :: (EnvironmentType) , "image" :: (NonEmptyString) , "computeType" :: (ComputeType) , "environmentVariables" :: NullOrUndefined (EnvironmentVariables) , "privilegedMode" :: NullOrUndefined (WrapperBoolean) , "certificate" :: NullOrUndefined (String) } ) -> ProjectEnvironment
-newProjectEnvironment' _computeType _image _type customize = (ProjectEnvironment <<< customize) { "computeType": _computeType, "image": _image, "type": _type, "certificate": (NullOrUndefined Nothing), "environmentVariables": (NullOrUndefined Nothing), "privilegedMode": (NullOrUndefined Nothing) }
+newProjectEnvironment' :: ComputeType -> NonEmptyString -> EnvironmentType -> ( { "type" :: (EnvironmentType) , "image" :: (NonEmptyString) , "computeType" :: (ComputeType) , "environmentVariables" :: Maybe (EnvironmentVariables) , "privilegedMode" :: Maybe (WrapperBoolean) , "certificate" :: Maybe (String) } -> {"type" :: (EnvironmentType) , "image" :: (NonEmptyString) , "computeType" :: (ComputeType) , "environmentVariables" :: Maybe (EnvironmentVariables) , "privilegedMode" :: Maybe (WrapperBoolean) , "certificate" :: Maybe (String) } ) -> ProjectEnvironment
+newProjectEnvironment' _computeType _image _type customize = (ProjectEnvironment <<< customize) { "computeType": _computeType, "image": _image, "type": _type, "certificate": Nothing, "environmentVariables": Nothing, "privilegedMode": Nothing }
 
 
 
@@ -1151,11 +1150,11 @@ instance encodeProjectSortByType :: Encode ProjectSortByType where encode = gene
 -- | <p>Information about the build input source code for the build project.</p>
 newtype ProjectSource = ProjectSource 
   { "type" :: (SourceType)
-  , "location" :: NullOrUndefined (String)
-  , "gitCloneDepth" :: NullOrUndefined (GitCloneDepth)
-  , "buildspec" :: NullOrUndefined (String)
-  , "auth" :: NullOrUndefined (SourceAuth)
-  , "insecureSsl" :: NullOrUndefined (WrapperBoolean)
+  , "location" :: Maybe (String)
+  , "gitCloneDepth" :: Maybe (GitCloneDepth)
+  , "buildspec" :: Maybe (String)
+  , "auth" :: Maybe (SourceAuth)
+  , "insecureSsl" :: Maybe (WrapperBoolean)
   }
 derive instance newtypeProjectSource :: Newtype ProjectSource _
 derive instance repGenericProjectSource :: Generic ProjectSource _
@@ -1165,12 +1164,12 @@ instance encodeProjectSource :: Encode ProjectSource where encode = genericEncod
 
 -- | Constructs ProjectSource from required parameters
 newProjectSource :: SourceType -> ProjectSource
-newProjectSource _type = ProjectSource { "type": _type, "auth": (NullOrUndefined Nothing), "buildspec": (NullOrUndefined Nothing), "gitCloneDepth": (NullOrUndefined Nothing), "insecureSsl": (NullOrUndefined Nothing), "location": (NullOrUndefined Nothing) }
+newProjectSource _type = ProjectSource { "type": _type, "auth": Nothing, "buildspec": Nothing, "gitCloneDepth": Nothing, "insecureSsl": Nothing, "location": Nothing }
 
 -- | Constructs ProjectSource's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newProjectSource' :: SourceType -> ( { "type" :: (SourceType) , "location" :: NullOrUndefined (String) , "gitCloneDepth" :: NullOrUndefined (GitCloneDepth) , "buildspec" :: NullOrUndefined (String) , "auth" :: NullOrUndefined (SourceAuth) , "insecureSsl" :: NullOrUndefined (WrapperBoolean) } -> {"type" :: (SourceType) , "location" :: NullOrUndefined (String) , "gitCloneDepth" :: NullOrUndefined (GitCloneDepth) , "buildspec" :: NullOrUndefined (String) , "auth" :: NullOrUndefined (SourceAuth) , "insecureSsl" :: NullOrUndefined (WrapperBoolean) } ) -> ProjectSource
-newProjectSource' _type customize = (ProjectSource <<< customize) { "type": _type, "auth": (NullOrUndefined Nothing), "buildspec": (NullOrUndefined Nothing), "gitCloneDepth": (NullOrUndefined Nothing), "insecureSsl": (NullOrUndefined Nothing), "location": (NullOrUndefined Nothing) }
+newProjectSource' :: SourceType -> ( { "type" :: (SourceType) , "location" :: Maybe (String) , "gitCloneDepth" :: Maybe (GitCloneDepth) , "buildspec" :: Maybe (String) , "auth" :: Maybe (SourceAuth) , "insecureSsl" :: Maybe (WrapperBoolean) } -> {"type" :: (SourceType) , "location" :: Maybe (String) , "gitCloneDepth" :: Maybe (GitCloneDepth) , "buildspec" :: Maybe (String) , "auth" :: Maybe (SourceAuth) , "insecureSsl" :: Maybe (WrapperBoolean) } ) -> ProjectSource
+newProjectSource' _type customize = (ProjectSource <<< customize) { "type": _type, "auth": Nothing, "buildspec": Nothing, "gitCloneDepth": Nothing, "insecureSsl": Nothing, "location": Nothing }
 
 
 
@@ -1224,7 +1223,7 @@ instance encodeSortOrderType :: Encode SortOrderType where encode = genericEncod
 -- | <p>Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p> <p>This information is for the AWS CodeBuild console's use only. Your code should not get or set this information directly (unless the build project's source <code>type</code> value is <code>BITBUCKET</code> or <code>GITHUB</code>).</p>
 newtype SourceAuth = SourceAuth 
   { "type" :: (SourceAuthType)
-  , "resource" :: NullOrUndefined (String)
+  , "resource" :: Maybe (String)
   }
 derive instance newtypeSourceAuth :: Newtype SourceAuth _
 derive instance repGenericSourceAuth :: Generic SourceAuth _
@@ -1234,12 +1233,12 @@ instance encodeSourceAuth :: Encode SourceAuth where encode = genericEncode opti
 
 -- | Constructs SourceAuth from required parameters
 newSourceAuth :: SourceAuthType -> SourceAuth
-newSourceAuth _type = SourceAuth { "type": _type, "resource": (NullOrUndefined Nothing) }
+newSourceAuth _type = SourceAuth { "type": _type, "resource": Nothing }
 
 -- | Constructs SourceAuth's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSourceAuth' :: SourceAuthType -> ( { "type" :: (SourceAuthType) , "resource" :: NullOrUndefined (String) } -> {"type" :: (SourceAuthType) , "resource" :: NullOrUndefined (String) } ) -> SourceAuth
-newSourceAuth' _type customize = (SourceAuth <<< customize) { "type": _type, "resource": (NullOrUndefined Nothing) }
+newSourceAuth' :: SourceAuthType -> ( { "type" :: (SourceAuthType) , "resource" :: Maybe (String) } -> {"type" :: (SourceAuthType) , "resource" :: Maybe (String) } ) -> SourceAuth
+newSourceAuth' _type customize = (SourceAuth <<< customize) { "type": _type, "resource": Nothing }
 
 
 
@@ -1263,12 +1262,12 @@ instance encodeSourceType :: Encode SourceType where encode = genericEncode opti
 
 newtype StartBuildInput = StartBuildInput 
   { "projectName" :: (NonEmptyString)
-  , "sourceVersion" :: NullOrUndefined (String)
-  , "artifactsOverride" :: NullOrUndefined (ProjectArtifacts)
-  , "environmentVariablesOverride" :: NullOrUndefined (EnvironmentVariables)
-  , "gitCloneDepthOverride" :: NullOrUndefined (GitCloneDepth)
-  , "buildspecOverride" :: NullOrUndefined (String)
-  , "timeoutInMinutesOverride" :: NullOrUndefined (TimeOut)
+  , "sourceVersion" :: Maybe (String)
+  , "artifactsOverride" :: Maybe (ProjectArtifacts)
+  , "environmentVariablesOverride" :: Maybe (EnvironmentVariables)
+  , "gitCloneDepthOverride" :: Maybe (GitCloneDepth)
+  , "buildspecOverride" :: Maybe (String)
+  , "timeoutInMinutesOverride" :: Maybe (TimeOut)
   }
 derive instance newtypeStartBuildInput :: Newtype StartBuildInput _
 derive instance repGenericStartBuildInput :: Generic StartBuildInput _
@@ -1278,17 +1277,17 @@ instance encodeStartBuildInput :: Encode StartBuildInput where encode = genericE
 
 -- | Constructs StartBuildInput from required parameters
 newStartBuildInput :: NonEmptyString -> StartBuildInput
-newStartBuildInput _projectName = StartBuildInput { "projectName": _projectName, "artifactsOverride": (NullOrUndefined Nothing), "buildspecOverride": (NullOrUndefined Nothing), "environmentVariablesOverride": (NullOrUndefined Nothing), "gitCloneDepthOverride": (NullOrUndefined Nothing), "sourceVersion": (NullOrUndefined Nothing), "timeoutInMinutesOverride": (NullOrUndefined Nothing) }
+newStartBuildInput _projectName = StartBuildInput { "projectName": _projectName, "artifactsOverride": Nothing, "buildspecOverride": Nothing, "environmentVariablesOverride": Nothing, "gitCloneDepthOverride": Nothing, "sourceVersion": Nothing, "timeoutInMinutesOverride": Nothing }
 
 -- | Constructs StartBuildInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStartBuildInput' :: NonEmptyString -> ( { "projectName" :: (NonEmptyString) , "sourceVersion" :: NullOrUndefined (String) , "artifactsOverride" :: NullOrUndefined (ProjectArtifacts) , "environmentVariablesOverride" :: NullOrUndefined (EnvironmentVariables) , "gitCloneDepthOverride" :: NullOrUndefined (GitCloneDepth) , "buildspecOverride" :: NullOrUndefined (String) , "timeoutInMinutesOverride" :: NullOrUndefined (TimeOut) } -> {"projectName" :: (NonEmptyString) , "sourceVersion" :: NullOrUndefined (String) , "artifactsOverride" :: NullOrUndefined (ProjectArtifacts) , "environmentVariablesOverride" :: NullOrUndefined (EnvironmentVariables) , "gitCloneDepthOverride" :: NullOrUndefined (GitCloneDepth) , "buildspecOverride" :: NullOrUndefined (String) , "timeoutInMinutesOverride" :: NullOrUndefined (TimeOut) } ) -> StartBuildInput
-newStartBuildInput' _projectName customize = (StartBuildInput <<< customize) { "projectName": _projectName, "artifactsOverride": (NullOrUndefined Nothing), "buildspecOverride": (NullOrUndefined Nothing), "environmentVariablesOverride": (NullOrUndefined Nothing), "gitCloneDepthOverride": (NullOrUndefined Nothing), "sourceVersion": (NullOrUndefined Nothing), "timeoutInMinutesOverride": (NullOrUndefined Nothing) }
+newStartBuildInput' :: NonEmptyString -> ( { "projectName" :: (NonEmptyString) , "sourceVersion" :: Maybe (String) , "artifactsOverride" :: Maybe (ProjectArtifacts) , "environmentVariablesOverride" :: Maybe (EnvironmentVariables) , "gitCloneDepthOverride" :: Maybe (GitCloneDepth) , "buildspecOverride" :: Maybe (String) , "timeoutInMinutesOverride" :: Maybe (TimeOut) } -> {"projectName" :: (NonEmptyString) , "sourceVersion" :: Maybe (String) , "artifactsOverride" :: Maybe (ProjectArtifacts) , "environmentVariablesOverride" :: Maybe (EnvironmentVariables) , "gitCloneDepthOverride" :: Maybe (GitCloneDepth) , "buildspecOverride" :: Maybe (String) , "timeoutInMinutesOverride" :: Maybe (TimeOut) } ) -> StartBuildInput
+newStartBuildInput' _projectName customize = (StartBuildInput <<< customize) { "projectName": _projectName, "artifactsOverride": Nothing, "buildspecOverride": Nothing, "environmentVariablesOverride": Nothing, "gitCloneDepthOverride": Nothing, "sourceVersion": Nothing, "timeoutInMinutesOverride": Nothing }
 
 
 
 newtype StartBuildOutput = StartBuildOutput 
-  { "build" :: NullOrUndefined (Build)
+  { "build" :: Maybe (Build)
   }
 derive instance newtypeStartBuildOutput :: Newtype StartBuildOutput _
 derive instance repGenericStartBuildOutput :: Generic StartBuildOutput _
@@ -1298,12 +1297,12 @@ instance encodeStartBuildOutput :: Encode StartBuildOutput where encode = generi
 
 -- | Constructs StartBuildOutput from required parameters
 newStartBuildOutput :: StartBuildOutput
-newStartBuildOutput  = StartBuildOutput { "build": (NullOrUndefined Nothing) }
+newStartBuildOutput  = StartBuildOutput { "build": Nothing }
 
 -- | Constructs StartBuildOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStartBuildOutput' :: ( { "build" :: NullOrUndefined (Build) } -> {"build" :: NullOrUndefined (Build) } ) -> StartBuildOutput
-newStartBuildOutput'  customize = (StartBuildOutput <<< customize) { "build": (NullOrUndefined Nothing) }
+newStartBuildOutput' :: ( { "build" :: Maybe (Build) } -> {"build" :: Maybe (Build) } ) -> StartBuildOutput
+newStartBuildOutput'  customize = (StartBuildOutput <<< customize) { "build": Nothing }
 
 
 
@@ -1337,7 +1336,7 @@ newStopBuildInput' _id customize = (StopBuildInput <<< customize) { "id": _id }
 
 
 newtype StopBuildOutput = StopBuildOutput 
-  { "build" :: NullOrUndefined (Build)
+  { "build" :: Maybe (Build)
   }
 derive instance newtypeStopBuildOutput :: Newtype StopBuildOutput _
 derive instance repGenericStopBuildOutput :: Generic StopBuildOutput _
@@ -1347,12 +1346,12 @@ instance encodeStopBuildOutput :: Encode StopBuildOutput where encode = genericE
 
 -- | Constructs StopBuildOutput from required parameters
 newStopBuildOutput :: StopBuildOutput
-newStopBuildOutput  = StopBuildOutput { "build": (NullOrUndefined Nothing) }
+newStopBuildOutput  = StopBuildOutput { "build": Nothing }
 
 -- | Constructs StopBuildOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStopBuildOutput' :: ( { "build" :: NullOrUndefined (Build) } -> {"build" :: NullOrUndefined (Build) } ) -> StopBuildOutput
-newStopBuildOutput'  customize = (StopBuildOutput <<< customize) { "build": (NullOrUndefined Nothing) }
+newStopBuildOutput' :: ( { "build" :: Maybe (Build) } -> {"build" :: Maybe (Build) } ) -> StopBuildOutput
+newStopBuildOutput'  customize = (StopBuildOutput <<< customize) { "build": Nothing }
 
 
 
@@ -1367,8 +1366,8 @@ instance encodeSubnets :: Encode Subnets where encode = genericEncode options
 
 -- | <p>A tag, consisting of a key and a value.</p> <p>This tag is available for use by AWS services that support tags in AWS CodeBuild.</p>
 newtype Tag = Tag 
-  { "key" :: NullOrUndefined (KeyInput)
-  , "value" :: NullOrUndefined (ValueInput)
+  { "key" :: Maybe (KeyInput)
+  , "value" :: Maybe (ValueInput)
   }
 derive instance newtypeTag :: Newtype Tag _
 derive instance repGenericTag :: Generic Tag _
@@ -1378,12 +1377,12 @@ instance encodeTag :: Encode Tag where encode = genericEncode options
 
 -- | Constructs Tag from required parameters
 newTag :: Tag
-newTag  = Tag { "key": (NullOrUndefined Nothing), "value": (NullOrUndefined Nothing) }
+newTag  = Tag { "key": Nothing, "value": Nothing }
 
 -- | Constructs Tag's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTag' :: ( { "key" :: NullOrUndefined (KeyInput) , "value" :: NullOrUndefined (ValueInput) } -> {"key" :: NullOrUndefined (KeyInput) , "value" :: NullOrUndefined (ValueInput) } ) -> Tag
-newTag'  customize = (Tag <<< customize) { "key": (NullOrUndefined Nothing), "value": (NullOrUndefined Nothing) }
+newTag' :: ( { "key" :: Maybe (KeyInput) , "value" :: Maybe (ValueInput) } -> {"key" :: Maybe (KeyInput) , "value" :: Maybe (ValueInput) } ) -> Tag
+newTag'  customize = (Tag <<< customize) { "key": Nothing, "value": Nothing }
 
 
 
@@ -1407,17 +1406,17 @@ instance encodeTimeOut :: Encode TimeOut where encode = genericEncode options
 
 newtype UpdateProjectInput = UpdateProjectInput 
   { "name" :: (NonEmptyString)
-  , "description" :: NullOrUndefined (ProjectDescription)
-  , "source" :: NullOrUndefined (ProjectSource)
-  , "artifacts" :: NullOrUndefined (ProjectArtifacts)
-  , "cache" :: NullOrUndefined (ProjectCache)
-  , "environment" :: NullOrUndefined (ProjectEnvironment)
-  , "serviceRole" :: NullOrUndefined (NonEmptyString)
-  , "timeoutInMinutes" :: NullOrUndefined (TimeOut)
-  , "encryptionKey" :: NullOrUndefined (NonEmptyString)
-  , "tags" :: NullOrUndefined (TagList)
-  , "vpcConfig" :: NullOrUndefined (VpcConfig)
-  , "badgeEnabled" :: NullOrUndefined (WrapperBoolean)
+  , "description" :: Maybe (ProjectDescription)
+  , "source" :: Maybe (ProjectSource)
+  , "artifacts" :: Maybe (ProjectArtifacts)
+  , "cache" :: Maybe (ProjectCache)
+  , "environment" :: Maybe (ProjectEnvironment)
+  , "serviceRole" :: Maybe (NonEmptyString)
+  , "timeoutInMinutes" :: Maybe (TimeOut)
+  , "encryptionKey" :: Maybe (NonEmptyString)
+  , "tags" :: Maybe (TagList)
+  , "vpcConfig" :: Maybe (VpcConfig)
+  , "badgeEnabled" :: Maybe (WrapperBoolean)
   }
 derive instance newtypeUpdateProjectInput :: Newtype UpdateProjectInput _
 derive instance repGenericUpdateProjectInput :: Generic UpdateProjectInput _
@@ -1427,17 +1426,17 @@ instance encodeUpdateProjectInput :: Encode UpdateProjectInput where encode = ge
 
 -- | Constructs UpdateProjectInput from required parameters
 newUpdateProjectInput :: NonEmptyString -> UpdateProjectInput
-newUpdateProjectInput _name = UpdateProjectInput { "name": _name, "artifacts": (NullOrUndefined Nothing), "badgeEnabled": (NullOrUndefined Nothing), "cache": (NullOrUndefined Nothing), "description": (NullOrUndefined Nothing), "encryptionKey": (NullOrUndefined Nothing), "environment": (NullOrUndefined Nothing), "serviceRole": (NullOrUndefined Nothing), "source": (NullOrUndefined Nothing), "tags": (NullOrUndefined Nothing), "timeoutInMinutes": (NullOrUndefined Nothing), "vpcConfig": (NullOrUndefined Nothing) }
+newUpdateProjectInput _name = UpdateProjectInput { "name": _name, "artifacts": Nothing, "badgeEnabled": Nothing, "cache": Nothing, "description": Nothing, "encryptionKey": Nothing, "environment": Nothing, "serviceRole": Nothing, "source": Nothing, "tags": Nothing, "timeoutInMinutes": Nothing, "vpcConfig": Nothing }
 
 -- | Constructs UpdateProjectInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateProjectInput' :: NonEmptyString -> ( { "name" :: (NonEmptyString) , "description" :: NullOrUndefined (ProjectDescription) , "source" :: NullOrUndefined (ProjectSource) , "artifacts" :: NullOrUndefined (ProjectArtifacts) , "cache" :: NullOrUndefined (ProjectCache) , "environment" :: NullOrUndefined (ProjectEnvironment) , "serviceRole" :: NullOrUndefined (NonEmptyString) , "timeoutInMinutes" :: NullOrUndefined (TimeOut) , "encryptionKey" :: NullOrUndefined (NonEmptyString) , "tags" :: NullOrUndefined (TagList) , "vpcConfig" :: NullOrUndefined (VpcConfig) , "badgeEnabled" :: NullOrUndefined (WrapperBoolean) } -> {"name" :: (NonEmptyString) , "description" :: NullOrUndefined (ProjectDescription) , "source" :: NullOrUndefined (ProjectSource) , "artifacts" :: NullOrUndefined (ProjectArtifacts) , "cache" :: NullOrUndefined (ProjectCache) , "environment" :: NullOrUndefined (ProjectEnvironment) , "serviceRole" :: NullOrUndefined (NonEmptyString) , "timeoutInMinutes" :: NullOrUndefined (TimeOut) , "encryptionKey" :: NullOrUndefined (NonEmptyString) , "tags" :: NullOrUndefined (TagList) , "vpcConfig" :: NullOrUndefined (VpcConfig) , "badgeEnabled" :: NullOrUndefined (WrapperBoolean) } ) -> UpdateProjectInput
-newUpdateProjectInput' _name customize = (UpdateProjectInput <<< customize) { "name": _name, "artifacts": (NullOrUndefined Nothing), "badgeEnabled": (NullOrUndefined Nothing), "cache": (NullOrUndefined Nothing), "description": (NullOrUndefined Nothing), "encryptionKey": (NullOrUndefined Nothing), "environment": (NullOrUndefined Nothing), "serviceRole": (NullOrUndefined Nothing), "source": (NullOrUndefined Nothing), "tags": (NullOrUndefined Nothing), "timeoutInMinutes": (NullOrUndefined Nothing), "vpcConfig": (NullOrUndefined Nothing) }
+newUpdateProjectInput' :: NonEmptyString -> ( { "name" :: (NonEmptyString) , "description" :: Maybe (ProjectDescription) , "source" :: Maybe (ProjectSource) , "artifacts" :: Maybe (ProjectArtifacts) , "cache" :: Maybe (ProjectCache) , "environment" :: Maybe (ProjectEnvironment) , "serviceRole" :: Maybe (NonEmptyString) , "timeoutInMinutes" :: Maybe (TimeOut) , "encryptionKey" :: Maybe (NonEmptyString) , "tags" :: Maybe (TagList) , "vpcConfig" :: Maybe (VpcConfig) , "badgeEnabled" :: Maybe (WrapperBoolean) } -> {"name" :: (NonEmptyString) , "description" :: Maybe (ProjectDescription) , "source" :: Maybe (ProjectSource) , "artifacts" :: Maybe (ProjectArtifacts) , "cache" :: Maybe (ProjectCache) , "environment" :: Maybe (ProjectEnvironment) , "serviceRole" :: Maybe (NonEmptyString) , "timeoutInMinutes" :: Maybe (TimeOut) , "encryptionKey" :: Maybe (NonEmptyString) , "tags" :: Maybe (TagList) , "vpcConfig" :: Maybe (VpcConfig) , "badgeEnabled" :: Maybe (WrapperBoolean) } ) -> UpdateProjectInput
+newUpdateProjectInput' _name customize = (UpdateProjectInput <<< customize) { "name": _name, "artifacts": Nothing, "badgeEnabled": Nothing, "cache": Nothing, "description": Nothing, "encryptionKey": Nothing, "environment": Nothing, "serviceRole": Nothing, "source": Nothing, "tags": Nothing, "timeoutInMinutes": Nothing, "vpcConfig": Nothing }
 
 
 
 newtype UpdateProjectOutput = UpdateProjectOutput 
-  { "project" :: NullOrUndefined (Project)
+  { "project" :: Maybe (Project)
   }
 derive instance newtypeUpdateProjectOutput :: Newtype UpdateProjectOutput _
 derive instance repGenericUpdateProjectOutput :: Generic UpdateProjectOutput _
@@ -1447,12 +1446,12 @@ instance encodeUpdateProjectOutput :: Encode UpdateProjectOutput where encode = 
 
 -- | Constructs UpdateProjectOutput from required parameters
 newUpdateProjectOutput :: UpdateProjectOutput
-newUpdateProjectOutput  = UpdateProjectOutput { "project": (NullOrUndefined Nothing) }
+newUpdateProjectOutput  = UpdateProjectOutput { "project": Nothing }
 
 -- | Constructs UpdateProjectOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateProjectOutput' :: ( { "project" :: NullOrUndefined (Project) } -> {"project" :: NullOrUndefined (Project) } ) -> UpdateProjectOutput
-newUpdateProjectOutput'  customize = (UpdateProjectOutput <<< customize) { "project": (NullOrUndefined Nothing) }
+newUpdateProjectOutput' :: ( { "project" :: Maybe (Project) } -> {"project" :: Maybe (Project) } ) -> UpdateProjectOutput
+newUpdateProjectOutput'  customize = (UpdateProjectOutput <<< customize) { "project": Nothing }
 
 
 
@@ -1467,9 +1466,9 @@ instance encodeValueInput :: Encode ValueInput where encode = genericEncode opti
 
 -- | <p>Information about the VPC configuration that AWS CodeBuild will access.</p>
 newtype VpcConfig = VpcConfig 
-  { "vpcId" :: NullOrUndefined (NonEmptyString)
-  , "subnets" :: NullOrUndefined (Subnets)
-  , "securityGroupIds" :: NullOrUndefined (SecurityGroupIds)
+  { "vpcId" :: Maybe (NonEmptyString)
+  , "subnets" :: Maybe (Subnets)
+  , "securityGroupIds" :: Maybe (SecurityGroupIds)
   }
 derive instance newtypeVpcConfig :: Newtype VpcConfig _
 derive instance repGenericVpcConfig :: Generic VpcConfig _
@@ -1479,20 +1478,20 @@ instance encodeVpcConfig :: Encode VpcConfig where encode = genericEncode option
 
 -- | Constructs VpcConfig from required parameters
 newVpcConfig :: VpcConfig
-newVpcConfig  = VpcConfig { "securityGroupIds": (NullOrUndefined Nothing), "subnets": (NullOrUndefined Nothing), "vpcId": (NullOrUndefined Nothing) }
+newVpcConfig  = VpcConfig { "securityGroupIds": Nothing, "subnets": Nothing, "vpcId": Nothing }
 
 -- | Constructs VpcConfig's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newVpcConfig' :: ( { "vpcId" :: NullOrUndefined (NonEmptyString) , "subnets" :: NullOrUndefined (Subnets) , "securityGroupIds" :: NullOrUndefined (SecurityGroupIds) } -> {"vpcId" :: NullOrUndefined (NonEmptyString) , "subnets" :: NullOrUndefined (Subnets) , "securityGroupIds" :: NullOrUndefined (SecurityGroupIds) } ) -> VpcConfig
-newVpcConfig'  customize = (VpcConfig <<< customize) { "securityGroupIds": (NullOrUndefined Nothing), "subnets": (NullOrUndefined Nothing), "vpcId": (NullOrUndefined Nothing) }
+newVpcConfig' :: ( { "vpcId" :: Maybe (NonEmptyString) , "subnets" :: Maybe (Subnets) , "securityGroupIds" :: Maybe (SecurityGroupIds) } -> {"vpcId" :: Maybe (NonEmptyString) , "subnets" :: Maybe (Subnets) , "securityGroupIds" :: Maybe (SecurityGroupIds) } ) -> VpcConfig
+newVpcConfig'  customize = (VpcConfig <<< customize) { "securityGroupIds": Nothing, "subnets": Nothing, "vpcId": Nothing }
 
 
 
 -- | <p>Information about a webhook in GitHub that connects repository events to a build project in AWS CodeBuild.</p>
 newtype Webhook = Webhook 
-  { "url" :: NullOrUndefined (NonEmptyString)
-  , "payloadUrl" :: NullOrUndefined (NonEmptyString)
-  , "secret" :: NullOrUndefined (NonEmptyString)
+  { "url" :: Maybe (NonEmptyString)
+  , "payloadUrl" :: Maybe (NonEmptyString)
+  , "secret" :: Maybe (NonEmptyString)
   }
 derive instance newtypeWebhook :: Newtype Webhook _
 derive instance repGenericWebhook :: Generic Webhook _
@@ -1502,12 +1501,12 @@ instance encodeWebhook :: Encode Webhook where encode = genericEncode options
 
 -- | Constructs Webhook from required parameters
 newWebhook :: Webhook
-newWebhook  = Webhook { "payloadUrl": (NullOrUndefined Nothing), "secret": (NullOrUndefined Nothing), "url": (NullOrUndefined Nothing) }
+newWebhook  = Webhook { "payloadUrl": Nothing, "secret": Nothing, "url": Nothing }
 
 -- | Constructs Webhook's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newWebhook' :: ( { "url" :: NullOrUndefined (NonEmptyString) , "payloadUrl" :: NullOrUndefined (NonEmptyString) , "secret" :: NullOrUndefined (NonEmptyString) } -> {"url" :: NullOrUndefined (NonEmptyString) , "payloadUrl" :: NullOrUndefined (NonEmptyString) , "secret" :: NullOrUndefined (NonEmptyString) } ) -> Webhook
-newWebhook'  customize = (Webhook <<< customize) { "payloadUrl": (NullOrUndefined Nothing), "secret": (NullOrUndefined Nothing), "url": (NullOrUndefined Nothing) }
+newWebhook' :: ( { "url" :: Maybe (NonEmptyString) , "payloadUrl" :: Maybe (NonEmptyString) , "secret" :: Maybe (NonEmptyString) } -> {"url" :: Maybe (NonEmptyString) , "payloadUrl" :: Maybe (NonEmptyString) , "secret" :: Maybe (NonEmptyString) } ) -> Webhook
+newWebhook'  customize = (Webhook <<< customize) { "payloadUrl": Nothing, "secret": Nothing, "url": Nothing }
 
 
 

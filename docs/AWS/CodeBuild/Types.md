@@ -108,7 +108,7 @@ Constructs BatchDeleteBuildsInput's fields from required parameters
 
 ``` purescript
 newtype BatchDeleteBuildsOutput
-  = BatchDeleteBuildsOutput { buildsDeleted :: NullOrUndefined (BuildIds), buildsNotDeleted :: NullOrUndefined (BuildsNotDeleted) }
+  = BatchDeleteBuildsOutput { buildsDeleted :: Maybe (BuildIds), buildsNotDeleted :: Maybe (BuildsNotDeleted) }
 ```
 
 ##### Instances
@@ -131,7 +131,7 @@ Constructs BatchDeleteBuildsOutput from required parameters
 #### `newBatchDeleteBuildsOutput'`
 
 ``` purescript
-newBatchDeleteBuildsOutput' :: ({ buildsDeleted :: NullOrUndefined (BuildIds), buildsNotDeleted :: NullOrUndefined (BuildsNotDeleted) } -> { buildsDeleted :: NullOrUndefined (BuildIds), buildsNotDeleted :: NullOrUndefined (BuildsNotDeleted) }) -> BatchDeleteBuildsOutput
+newBatchDeleteBuildsOutput' :: ({ buildsDeleted :: Maybe (BuildIds), buildsNotDeleted :: Maybe (BuildsNotDeleted) } -> { buildsDeleted :: Maybe (BuildIds), buildsNotDeleted :: Maybe (BuildsNotDeleted) }) -> BatchDeleteBuildsOutput
 ```
 
 Constructs BatchDeleteBuildsOutput's fields from required parameters
@@ -172,7 +172,7 @@ Constructs BatchGetBuildsInput's fields from required parameters
 
 ``` purescript
 newtype BatchGetBuildsOutput
-  = BatchGetBuildsOutput { builds :: NullOrUndefined (Builds), buildsNotFound :: NullOrUndefined (BuildIds) }
+  = BatchGetBuildsOutput { builds :: Maybe (Builds), buildsNotFound :: Maybe (BuildIds) }
 ```
 
 ##### Instances
@@ -195,7 +195,7 @@ Constructs BatchGetBuildsOutput from required parameters
 #### `newBatchGetBuildsOutput'`
 
 ``` purescript
-newBatchGetBuildsOutput' :: ({ builds :: NullOrUndefined (Builds), buildsNotFound :: NullOrUndefined (BuildIds) } -> { builds :: NullOrUndefined (Builds), buildsNotFound :: NullOrUndefined (BuildIds) }) -> BatchGetBuildsOutput
+newBatchGetBuildsOutput' :: ({ builds :: Maybe (Builds), buildsNotFound :: Maybe (BuildIds) } -> { builds :: Maybe (Builds), buildsNotFound :: Maybe (BuildIds) }) -> BatchGetBuildsOutput
 ```
 
 Constructs BatchGetBuildsOutput's fields from required parameters
@@ -236,7 +236,7 @@ Constructs BatchGetProjectsInput's fields from required parameters
 
 ``` purescript
 newtype BatchGetProjectsOutput
-  = BatchGetProjectsOutput { projects :: NullOrUndefined (Projects), projectsNotFound :: NullOrUndefined (ProjectNames) }
+  = BatchGetProjectsOutput { projects :: Maybe (Projects), projectsNotFound :: Maybe (ProjectNames) }
 ```
 
 ##### Instances
@@ -259,7 +259,7 @@ Constructs BatchGetProjectsOutput from required parameters
 #### `newBatchGetProjectsOutput'`
 
 ``` purescript
-newBatchGetProjectsOutput' :: ({ projects :: NullOrUndefined (Projects), projectsNotFound :: NullOrUndefined (ProjectNames) } -> { projects :: NullOrUndefined (Projects), projectsNotFound :: NullOrUndefined (ProjectNames) }) -> BatchGetProjectsOutput
+newBatchGetProjectsOutput' :: ({ projects :: Maybe (Projects), projectsNotFound :: Maybe (ProjectNames) } -> { projects :: Maybe (Projects), projectsNotFound :: Maybe (ProjectNames) }) -> BatchGetProjectsOutput
 ```
 
 Constructs BatchGetProjectsOutput's fields from required parameters
@@ -268,7 +268,7 @@ Constructs BatchGetProjectsOutput's fields from required parameters
 
 ``` purescript
 newtype Build
-  = Build { id :: NullOrUndefined (NonEmptyString), arn :: NullOrUndefined (NonEmptyString), startTime :: NullOrUndefined (Timestamp), endTime :: NullOrUndefined (Timestamp), currentPhase :: NullOrUndefined (String), buildStatus :: NullOrUndefined (StatusType), sourceVersion :: NullOrUndefined (NonEmptyString), projectName :: NullOrUndefined (NonEmptyString), phases :: NullOrUndefined (BuildPhases), source :: NullOrUndefined (ProjectSource), artifacts :: NullOrUndefined (BuildArtifacts), cache :: NullOrUndefined (ProjectCache), environment :: NullOrUndefined (ProjectEnvironment), logs :: NullOrUndefined (LogsLocation), timeoutInMinutes :: NullOrUndefined (WrapperInt), buildComplete :: NullOrUndefined (Boolean), initiator :: NullOrUndefined (String), vpcConfig :: NullOrUndefined (VpcConfig), networkInterface :: NullOrUndefined (NetworkInterface) }
+  = Build { id :: Maybe (NonEmptyString), arn :: Maybe (NonEmptyString), startTime :: Maybe (Timestamp), endTime :: Maybe (Timestamp), currentPhase :: Maybe (String), buildStatus :: Maybe (StatusType), sourceVersion :: Maybe (NonEmptyString), projectName :: Maybe (NonEmptyString), phases :: Maybe (BuildPhases), source :: Maybe (ProjectSource), artifacts :: Maybe (BuildArtifacts), cache :: Maybe (ProjectCache), environment :: Maybe (ProjectEnvironment), logs :: Maybe (LogsLocation), timeoutInMinutes :: Maybe (WrapperInt), buildComplete :: Maybe (Boolean), initiator :: Maybe (String), vpcConfig :: Maybe (VpcConfig), networkInterface :: Maybe (NetworkInterface) }
 ```
 
 <p>Information about a build.</p>
@@ -293,7 +293,7 @@ Constructs Build from required parameters
 #### `newBuild'`
 
 ``` purescript
-newBuild' :: ({ id :: NullOrUndefined (NonEmptyString), arn :: NullOrUndefined (NonEmptyString), startTime :: NullOrUndefined (Timestamp), endTime :: NullOrUndefined (Timestamp), currentPhase :: NullOrUndefined (String), buildStatus :: NullOrUndefined (StatusType), sourceVersion :: NullOrUndefined (NonEmptyString), projectName :: NullOrUndefined (NonEmptyString), phases :: NullOrUndefined (BuildPhases), source :: NullOrUndefined (ProjectSource), artifacts :: NullOrUndefined (BuildArtifacts), cache :: NullOrUndefined (ProjectCache), environment :: NullOrUndefined (ProjectEnvironment), logs :: NullOrUndefined (LogsLocation), timeoutInMinutes :: NullOrUndefined (WrapperInt), buildComplete :: NullOrUndefined (Boolean), initiator :: NullOrUndefined (String), vpcConfig :: NullOrUndefined (VpcConfig), networkInterface :: NullOrUndefined (NetworkInterface) } -> { id :: NullOrUndefined (NonEmptyString), arn :: NullOrUndefined (NonEmptyString), startTime :: NullOrUndefined (Timestamp), endTime :: NullOrUndefined (Timestamp), currentPhase :: NullOrUndefined (String), buildStatus :: NullOrUndefined (StatusType), sourceVersion :: NullOrUndefined (NonEmptyString), projectName :: NullOrUndefined (NonEmptyString), phases :: NullOrUndefined (BuildPhases), source :: NullOrUndefined (ProjectSource), artifacts :: NullOrUndefined (BuildArtifacts), cache :: NullOrUndefined (ProjectCache), environment :: NullOrUndefined (ProjectEnvironment), logs :: NullOrUndefined (LogsLocation), timeoutInMinutes :: NullOrUndefined (WrapperInt), buildComplete :: NullOrUndefined (Boolean), initiator :: NullOrUndefined (String), vpcConfig :: NullOrUndefined (VpcConfig), networkInterface :: NullOrUndefined (NetworkInterface) }) -> Build
+newBuild' :: ({ id :: Maybe (NonEmptyString), arn :: Maybe (NonEmptyString), startTime :: Maybe (Timestamp), endTime :: Maybe (Timestamp), currentPhase :: Maybe (String), buildStatus :: Maybe (StatusType), sourceVersion :: Maybe (NonEmptyString), projectName :: Maybe (NonEmptyString), phases :: Maybe (BuildPhases), source :: Maybe (ProjectSource), artifacts :: Maybe (BuildArtifacts), cache :: Maybe (ProjectCache), environment :: Maybe (ProjectEnvironment), logs :: Maybe (LogsLocation), timeoutInMinutes :: Maybe (WrapperInt), buildComplete :: Maybe (Boolean), initiator :: Maybe (String), vpcConfig :: Maybe (VpcConfig), networkInterface :: Maybe (NetworkInterface) } -> { id :: Maybe (NonEmptyString), arn :: Maybe (NonEmptyString), startTime :: Maybe (Timestamp), endTime :: Maybe (Timestamp), currentPhase :: Maybe (String), buildStatus :: Maybe (StatusType), sourceVersion :: Maybe (NonEmptyString), projectName :: Maybe (NonEmptyString), phases :: Maybe (BuildPhases), source :: Maybe (ProjectSource), artifacts :: Maybe (BuildArtifacts), cache :: Maybe (ProjectCache), environment :: Maybe (ProjectEnvironment), logs :: Maybe (LogsLocation), timeoutInMinutes :: Maybe (WrapperInt), buildComplete :: Maybe (Boolean), initiator :: Maybe (String), vpcConfig :: Maybe (VpcConfig), networkInterface :: Maybe (NetworkInterface) }) -> Build
 ```
 
 Constructs Build's fields from required parameters
@@ -302,7 +302,7 @@ Constructs Build's fields from required parameters
 
 ``` purescript
 newtype BuildArtifacts
-  = BuildArtifacts { location :: NullOrUndefined (String), sha256sum :: NullOrUndefined (String), md5sum :: NullOrUndefined (String) }
+  = BuildArtifacts { location :: Maybe (String), sha256sum :: Maybe (String), md5sum :: Maybe (String) }
 ```
 
 <p>Information about build output artifacts.</p>
@@ -327,7 +327,7 @@ Constructs BuildArtifacts from required parameters
 #### `newBuildArtifacts'`
 
 ``` purescript
-newBuildArtifacts' :: ({ location :: NullOrUndefined (String), sha256sum :: NullOrUndefined (String), md5sum :: NullOrUndefined (String) } -> { location :: NullOrUndefined (String), sha256sum :: NullOrUndefined (String), md5sum :: NullOrUndefined (String) }) -> BuildArtifacts
+newBuildArtifacts' :: ({ location :: Maybe (String), sha256sum :: Maybe (String), md5sum :: Maybe (String) } -> { location :: Maybe (String), sha256sum :: Maybe (String), md5sum :: Maybe (String) }) -> BuildArtifacts
 ```
 
 Constructs BuildArtifacts's fields from required parameters
@@ -352,7 +352,7 @@ Encode BuildIds
 
 ``` purescript
 newtype BuildNotDeleted
-  = BuildNotDeleted { id :: NullOrUndefined (NonEmptyString), statusCode :: NullOrUndefined (String) }
+  = BuildNotDeleted { id :: Maybe (NonEmptyString), statusCode :: Maybe (String) }
 ```
 
 <p>Information about a build that could not be successfully deleted.</p>
@@ -377,7 +377,7 @@ Constructs BuildNotDeleted from required parameters
 #### `newBuildNotDeleted'`
 
 ``` purescript
-newBuildNotDeleted' :: ({ id :: NullOrUndefined (NonEmptyString), statusCode :: NullOrUndefined (String) } -> { id :: NullOrUndefined (NonEmptyString), statusCode :: NullOrUndefined (String) }) -> BuildNotDeleted
+newBuildNotDeleted' :: ({ id :: Maybe (NonEmptyString), statusCode :: Maybe (String) } -> { id :: Maybe (NonEmptyString), statusCode :: Maybe (String) }) -> BuildNotDeleted
 ```
 
 Constructs BuildNotDeleted's fields from required parameters
@@ -386,7 +386,7 @@ Constructs BuildNotDeleted's fields from required parameters
 
 ``` purescript
 newtype BuildPhase
-  = BuildPhase { phaseType :: NullOrUndefined (BuildPhaseType), phaseStatus :: NullOrUndefined (StatusType), startTime :: NullOrUndefined (Timestamp), endTime :: NullOrUndefined (Timestamp), durationInSeconds :: NullOrUndefined (WrapperLong), contexts :: NullOrUndefined (PhaseContexts) }
+  = BuildPhase { phaseType :: Maybe (BuildPhaseType), phaseStatus :: Maybe (StatusType), startTime :: Maybe (Timestamp), endTime :: Maybe (Timestamp), durationInSeconds :: Maybe (WrapperLong), contexts :: Maybe (PhaseContexts) }
 ```
 
 <p>Information about a stage for a build.</p>
@@ -411,7 +411,7 @@ Constructs BuildPhase from required parameters
 #### `newBuildPhase'`
 
 ``` purescript
-newBuildPhase' :: ({ phaseType :: NullOrUndefined (BuildPhaseType), phaseStatus :: NullOrUndefined (StatusType), startTime :: NullOrUndefined (Timestamp), endTime :: NullOrUndefined (Timestamp), durationInSeconds :: NullOrUndefined (WrapperLong), contexts :: NullOrUndefined (PhaseContexts) } -> { phaseType :: NullOrUndefined (BuildPhaseType), phaseStatus :: NullOrUndefined (StatusType), startTime :: NullOrUndefined (Timestamp), endTime :: NullOrUndefined (Timestamp), durationInSeconds :: NullOrUndefined (WrapperLong), contexts :: NullOrUndefined (PhaseContexts) }) -> BuildPhase
+newBuildPhase' :: ({ phaseType :: Maybe (BuildPhaseType), phaseStatus :: Maybe (StatusType), startTime :: Maybe (Timestamp), endTime :: Maybe (Timestamp), durationInSeconds :: Maybe (WrapperLong), contexts :: Maybe (PhaseContexts) } -> { phaseType :: Maybe (BuildPhaseType), phaseStatus :: Maybe (StatusType), startTime :: Maybe (Timestamp), endTime :: Maybe (Timestamp), durationInSeconds :: Maybe (WrapperLong), contexts :: Maybe (PhaseContexts) }) -> BuildPhase
 ```
 
 Constructs BuildPhase's fields from required parameters
@@ -516,7 +516,7 @@ Encode ComputeType
 
 ``` purescript
 newtype CreateProjectInput
-  = CreateProjectInput { name :: ProjectName, description :: NullOrUndefined (ProjectDescription), source :: ProjectSource, artifacts :: ProjectArtifacts, cache :: NullOrUndefined (ProjectCache), environment :: ProjectEnvironment, serviceRole :: NullOrUndefined (NonEmptyString), timeoutInMinutes :: NullOrUndefined (TimeOut), encryptionKey :: NullOrUndefined (NonEmptyString), tags :: NullOrUndefined (TagList), vpcConfig :: NullOrUndefined (VpcConfig), badgeEnabled :: NullOrUndefined (WrapperBoolean) }
+  = CreateProjectInput { name :: ProjectName, description :: Maybe (ProjectDescription), source :: ProjectSource, artifacts :: ProjectArtifacts, cache :: Maybe (ProjectCache), environment :: ProjectEnvironment, serviceRole :: Maybe (NonEmptyString), timeoutInMinutes :: Maybe (TimeOut), encryptionKey :: Maybe (NonEmptyString), tags :: Maybe (TagList), vpcConfig :: Maybe (VpcConfig), badgeEnabled :: Maybe (WrapperBoolean) }
 ```
 
 ##### Instances
@@ -539,7 +539,7 @@ Constructs CreateProjectInput from required parameters
 #### `newCreateProjectInput'`
 
 ``` purescript
-newCreateProjectInput' :: ProjectArtifacts -> ProjectEnvironment -> ProjectName -> ProjectSource -> ({ name :: ProjectName, description :: NullOrUndefined (ProjectDescription), source :: ProjectSource, artifacts :: ProjectArtifacts, cache :: NullOrUndefined (ProjectCache), environment :: ProjectEnvironment, serviceRole :: NullOrUndefined (NonEmptyString), timeoutInMinutes :: NullOrUndefined (TimeOut), encryptionKey :: NullOrUndefined (NonEmptyString), tags :: NullOrUndefined (TagList), vpcConfig :: NullOrUndefined (VpcConfig), badgeEnabled :: NullOrUndefined (WrapperBoolean) } -> { name :: ProjectName, description :: NullOrUndefined (ProjectDescription), source :: ProjectSource, artifacts :: ProjectArtifacts, cache :: NullOrUndefined (ProjectCache), environment :: ProjectEnvironment, serviceRole :: NullOrUndefined (NonEmptyString), timeoutInMinutes :: NullOrUndefined (TimeOut), encryptionKey :: NullOrUndefined (NonEmptyString), tags :: NullOrUndefined (TagList), vpcConfig :: NullOrUndefined (VpcConfig), badgeEnabled :: NullOrUndefined (WrapperBoolean) }) -> CreateProjectInput
+newCreateProjectInput' :: ProjectArtifacts -> ProjectEnvironment -> ProjectName -> ProjectSource -> ({ name :: ProjectName, description :: Maybe (ProjectDescription), source :: ProjectSource, artifacts :: ProjectArtifacts, cache :: Maybe (ProjectCache), environment :: ProjectEnvironment, serviceRole :: Maybe (NonEmptyString), timeoutInMinutes :: Maybe (TimeOut), encryptionKey :: Maybe (NonEmptyString), tags :: Maybe (TagList), vpcConfig :: Maybe (VpcConfig), badgeEnabled :: Maybe (WrapperBoolean) } -> { name :: ProjectName, description :: Maybe (ProjectDescription), source :: ProjectSource, artifacts :: ProjectArtifacts, cache :: Maybe (ProjectCache), environment :: ProjectEnvironment, serviceRole :: Maybe (NonEmptyString), timeoutInMinutes :: Maybe (TimeOut), encryptionKey :: Maybe (NonEmptyString), tags :: Maybe (TagList), vpcConfig :: Maybe (VpcConfig), badgeEnabled :: Maybe (WrapperBoolean) }) -> CreateProjectInput
 ```
 
 Constructs CreateProjectInput's fields from required parameters
@@ -548,7 +548,7 @@ Constructs CreateProjectInput's fields from required parameters
 
 ``` purescript
 newtype CreateProjectOutput
-  = CreateProjectOutput { project :: NullOrUndefined (Project) }
+  = CreateProjectOutput { project :: Maybe (Project) }
 ```
 
 ##### Instances
@@ -571,7 +571,7 @@ Constructs CreateProjectOutput from required parameters
 #### `newCreateProjectOutput'`
 
 ``` purescript
-newCreateProjectOutput' :: ({ project :: NullOrUndefined (Project) } -> { project :: NullOrUndefined (Project) }) -> CreateProjectOutput
+newCreateProjectOutput' :: ({ project :: Maybe (Project) } -> { project :: Maybe (Project) }) -> CreateProjectOutput
 ```
 
 Constructs CreateProjectOutput's fields from required parameters
@@ -612,7 +612,7 @@ Constructs CreateWebhookInput's fields from required parameters
 
 ``` purescript
 newtype CreateWebhookOutput
-  = CreateWebhookOutput { webhook :: NullOrUndefined (Webhook) }
+  = CreateWebhookOutput { webhook :: Maybe (Webhook) }
 ```
 
 ##### Instances
@@ -635,7 +635,7 @@ Constructs CreateWebhookOutput from required parameters
 #### `newCreateWebhookOutput'`
 
 ``` purescript
-newCreateWebhookOutput' :: ({ webhook :: NullOrUndefined (Webhook) } -> { webhook :: NullOrUndefined (Webhook) }) -> CreateWebhookOutput
+newCreateWebhookOutput' :: ({ webhook :: Maybe (Webhook) } -> { webhook :: Maybe (Webhook) }) -> CreateWebhookOutput
 ```
 
 Constructs CreateWebhookOutput's fields from required parameters
@@ -740,7 +740,7 @@ Encode DeleteWebhookOutput
 
 ``` purescript
 newtype EnvironmentImage
-  = EnvironmentImage { name :: NullOrUndefined (String), description :: NullOrUndefined (String), versions :: NullOrUndefined (ImageVersions) }
+  = EnvironmentImage { name :: Maybe (String), description :: Maybe (String), versions :: Maybe (ImageVersions) }
 ```
 
 <p>Information about a Docker image that is managed by AWS CodeBuild.</p>
@@ -765,7 +765,7 @@ Constructs EnvironmentImage from required parameters
 #### `newEnvironmentImage'`
 
 ``` purescript
-newEnvironmentImage' :: ({ name :: NullOrUndefined (String), description :: NullOrUndefined (String), versions :: NullOrUndefined (ImageVersions) } -> { name :: NullOrUndefined (String), description :: NullOrUndefined (String), versions :: NullOrUndefined (ImageVersions) }) -> EnvironmentImage
+newEnvironmentImage' :: ({ name :: Maybe (String), description :: Maybe (String), versions :: Maybe (ImageVersions) } -> { name :: Maybe (String), description :: Maybe (String), versions :: Maybe (ImageVersions) }) -> EnvironmentImage
 ```
 
 Constructs EnvironmentImage's fields from required parameters
@@ -790,7 +790,7 @@ Encode EnvironmentImages
 
 ``` purescript
 newtype EnvironmentLanguage
-  = EnvironmentLanguage { language :: NullOrUndefined (LanguageType), images :: NullOrUndefined (EnvironmentImages) }
+  = EnvironmentLanguage { language :: Maybe (LanguageType), images :: Maybe (EnvironmentImages) }
 ```
 
 <p>A set of Docker images that are related by programming language and are managed by AWS CodeBuild.</p>
@@ -815,7 +815,7 @@ Constructs EnvironmentLanguage from required parameters
 #### `newEnvironmentLanguage'`
 
 ``` purescript
-newEnvironmentLanguage' :: ({ language :: NullOrUndefined (LanguageType), images :: NullOrUndefined (EnvironmentImages) } -> { language :: NullOrUndefined (LanguageType), images :: NullOrUndefined (EnvironmentImages) }) -> EnvironmentLanguage
+newEnvironmentLanguage' :: ({ language :: Maybe (LanguageType), images :: Maybe (EnvironmentImages) } -> { language :: Maybe (LanguageType), images :: Maybe (EnvironmentImages) }) -> EnvironmentLanguage
 ```
 
 Constructs EnvironmentLanguage's fields from required parameters
@@ -840,7 +840,7 @@ Encode EnvironmentLanguages
 
 ``` purescript
 newtype EnvironmentPlatform
-  = EnvironmentPlatform { platform :: NullOrUndefined (PlatformType), languages :: NullOrUndefined (EnvironmentLanguages) }
+  = EnvironmentPlatform { platform :: Maybe (PlatformType), languages :: Maybe (EnvironmentLanguages) }
 ```
 
 <p>A set of Docker images that are related by platform and are managed by AWS CodeBuild.</p>
@@ -865,7 +865,7 @@ Constructs EnvironmentPlatform from required parameters
 #### `newEnvironmentPlatform'`
 
 ``` purescript
-newEnvironmentPlatform' :: ({ platform :: NullOrUndefined (PlatformType), languages :: NullOrUndefined (EnvironmentLanguages) } -> { platform :: NullOrUndefined (PlatformType), languages :: NullOrUndefined (EnvironmentLanguages) }) -> EnvironmentPlatform
+newEnvironmentPlatform' :: ({ platform :: Maybe (PlatformType), languages :: Maybe (EnvironmentLanguages) } -> { platform :: Maybe (PlatformType), languages :: Maybe (EnvironmentLanguages) }) -> EnvironmentPlatform
 ```
 
 Constructs EnvironmentPlatform's fields from required parameters
@@ -906,7 +906,7 @@ Encode EnvironmentType
 
 ``` purescript
 newtype EnvironmentVariable
-  = EnvironmentVariable { name :: NonEmptyString, value :: String, "type" :: NullOrUndefined (EnvironmentVariableType) }
+  = EnvironmentVariable { name :: NonEmptyString, value :: String, "type" :: Maybe (EnvironmentVariableType) }
 ```
 
 <p>Information about an environment variable for a build project or a build.</p>
@@ -931,7 +931,7 @@ Constructs EnvironmentVariable from required parameters
 #### `newEnvironmentVariable'`
 
 ``` purescript
-newEnvironmentVariable' :: NonEmptyString -> String -> ({ name :: NonEmptyString, value :: String, "type" :: NullOrUndefined (EnvironmentVariableType) } -> { name :: NonEmptyString, value :: String, "type" :: NullOrUndefined (EnvironmentVariableType) }) -> EnvironmentVariable
+newEnvironmentVariable' :: NonEmptyString -> String -> ({ name :: NonEmptyString, value :: String, "type" :: Maybe (EnvironmentVariableType) } -> { name :: NonEmptyString, value :: String, "type" :: Maybe (EnvironmentVariableType) }) -> EnvironmentVariable
 ```
 
 Constructs EnvironmentVariable's fields from required parameters
@@ -1102,7 +1102,7 @@ Encode LanguageType
 
 ``` purescript
 newtype ListBuildsForProjectInput
-  = ListBuildsForProjectInput { projectName :: NonEmptyString, sortOrder :: NullOrUndefined (SortOrderType), nextToken :: NullOrUndefined (String) }
+  = ListBuildsForProjectInput { projectName :: NonEmptyString, sortOrder :: Maybe (SortOrderType), nextToken :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1125,7 +1125,7 @@ Constructs ListBuildsForProjectInput from required parameters
 #### `newListBuildsForProjectInput'`
 
 ``` purescript
-newListBuildsForProjectInput' :: NonEmptyString -> ({ projectName :: NonEmptyString, sortOrder :: NullOrUndefined (SortOrderType), nextToken :: NullOrUndefined (String) } -> { projectName :: NonEmptyString, sortOrder :: NullOrUndefined (SortOrderType), nextToken :: NullOrUndefined (String) }) -> ListBuildsForProjectInput
+newListBuildsForProjectInput' :: NonEmptyString -> ({ projectName :: NonEmptyString, sortOrder :: Maybe (SortOrderType), nextToken :: Maybe (String) } -> { projectName :: NonEmptyString, sortOrder :: Maybe (SortOrderType), nextToken :: Maybe (String) }) -> ListBuildsForProjectInput
 ```
 
 Constructs ListBuildsForProjectInput's fields from required parameters
@@ -1134,7 +1134,7 @@ Constructs ListBuildsForProjectInput's fields from required parameters
 
 ``` purescript
 newtype ListBuildsForProjectOutput
-  = ListBuildsForProjectOutput { ids :: NullOrUndefined (BuildIds), nextToken :: NullOrUndefined (String) }
+  = ListBuildsForProjectOutput { ids :: Maybe (BuildIds), nextToken :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1157,7 +1157,7 @@ Constructs ListBuildsForProjectOutput from required parameters
 #### `newListBuildsForProjectOutput'`
 
 ``` purescript
-newListBuildsForProjectOutput' :: ({ ids :: NullOrUndefined (BuildIds), nextToken :: NullOrUndefined (String) } -> { ids :: NullOrUndefined (BuildIds), nextToken :: NullOrUndefined (String) }) -> ListBuildsForProjectOutput
+newListBuildsForProjectOutput' :: ({ ids :: Maybe (BuildIds), nextToken :: Maybe (String) } -> { ids :: Maybe (BuildIds), nextToken :: Maybe (String) }) -> ListBuildsForProjectOutput
 ```
 
 Constructs ListBuildsForProjectOutput's fields from required parameters
@@ -1166,7 +1166,7 @@ Constructs ListBuildsForProjectOutput's fields from required parameters
 
 ``` purescript
 newtype ListBuildsInput
-  = ListBuildsInput { sortOrder :: NullOrUndefined (SortOrderType), nextToken :: NullOrUndefined (String) }
+  = ListBuildsInput { sortOrder :: Maybe (SortOrderType), nextToken :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1189,7 +1189,7 @@ Constructs ListBuildsInput from required parameters
 #### `newListBuildsInput'`
 
 ``` purescript
-newListBuildsInput' :: ({ sortOrder :: NullOrUndefined (SortOrderType), nextToken :: NullOrUndefined (String) } -> { sortOrder :: NullOrUndefined (SortOrderType), nextToken :: NullOrUndefined (String) }) -> ListBuildsInput
+newListBuildsInput' :: ({ sortOrder :: Maybe (SortOrderType), nextToken :: Maybe (String) } -> { sortOrder :: Maybe (SortOrderType), nextToken :: Maybe (String) }) -> ListBuildsInput
 ```
 
 Constructs ListBuildsInput's fields from required parameters
@@ -1198,7 +1198,7 @@ Constructs ListBuildsInput's fields from required parameters
 
 ``` purescript
 newtype ListBuildsOutput
-  = ListBuildsOutput { ids :: NullOrUndefined (BuildIds), nextToken :: NullOrUndefined (String) }
+  = ListBuildsOutput { ids :: Maybe (BuildIds), nextToken :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1221,7 +1221,7 @@ Constructs ListBuildsOutput from required parameters
 #### `newListBuildsOutput'`
 
 ``` purescript
-newListBuildsOutput' :: ({ ids :: NullOrUndefined (BuildIds), nextToken :: NullOrUndefined (String) } -> { ids :: NullOrUndefined (BuildIds), nextToken :: NullOrUndefined (String) }) -> ListBuildsOutput
+newListBuildsOutput' :: ({ ids :: Maybe (BuildIds), nextToken :: Maybe (String) } -> { ids :: Maybe (BuildIds), nextToken :: Maybe (String) }) -> ListBuildsOutput
 ```
 
 Constructs ListBuildsOutput's fields from required parameters
@@ -1246,7 +1246,7 @@ Encode ListCuratedEnvironmentImagesInput
 
 ``` purescript
 newtype ListCuratedEnvironmentImagesOutput
-  = ListCuratedEnvironmentImagesOutput { platforms :: NullOrUndefined (EnvironmentPlatforms) }
+  = ListCuratedEnvironmentImagesOutput { platforms :: Maybe (EnvironmentPlatforms) }
 ```
 
 ##### Instances
@@ -1269,7 +1269,7 @@ Constructs ListCuratedEnvironmentImagesOutput from required parameters
 #### `newListCuratedEnvironmentImagesOutput'`
 
 ``` purescript
-newListCuratedEnvironmentImagesOutput' :: ({ platforms :: NullOrUndefined (EnvironmentPlatforms) } -> { platforms :: NullOrUndefined (EnvironmentPlatforms) }) -> ListCuratedEnvironmentImagesOutput
+newListCuratedEnvironmentImagesOutput' :: ({ platforms :: Maybe (EnvironmentPlatforms) } -> { platforms :: Maybe (EnvironmentPlatforms) }) -> ListCuratedEnvironmentImagesOutput
 ```
 
 Constructs ListCuratedEnvironmentImagesOutput's fields from required parameters
@@ -1278,7 +1278,7 @@ Constructs ListCuratedEnvironmentImagesOutput's fields from required parameters
 
 ``` purescript
 newtype ListProjectsInput
-  = ListProjectsInput { sortBy :: NullOrUndefined (ProjectSortByType), sortOrder :: NullOrUndefined (SortOrderType), nextToken :: NullOrUndefined (NonEmptyString) }
+  = ListProjectsInput { sortBy :: Maybe (ProjectSortByType), sortOrder :: Maybe (SortOrderType), nextToken :: Maybe (NonEmptyString) }
 ```
 
 ##### Instances
@@ -1301,7 +1301,7 @@ Constructs ListProjectsInput from required parameters
 #### `newListProjectsInput'`
 
 ``` purescript
-newListProjectsInput' :: ({ sortBy :: NullOrUndefined (ProjectSortByType), sortOrder :: NullOrUndefined (SortOrderType), nextToken :: NullOrUndefined (NonEmptyString) } -> { sortBy :: NullOrUndefined (ProjectSortByType), sortOrder :: NullOrUndefined (SortOrderType), nextToken :: NullOrUndefined (NonEmptyString) }) -> ListProjectsInput
+newListProjectsInput' :: ({ sortBy :: Maybe (ProjectSortByType), sortOrder :: Maybe (SortOrderType), nextToken :: Maybe (NonEmptyString) } -> { sortBy :: Maybe (ProjectSortByType), sortOrder :: Maybe (SortOrderType), nextToken :: Maybe (NonEmptyString) }) -> ListProjectsInput
 ```
 
 Constructs ListProjectsInput's fields from required parameters
@@ -1310,7 +1310,7 @@ Constructs ListProjectsInput's fields from required parameters
 
 ``` purescript
 newtype ListProjectsOutput
-  = ListProjectsOutput { nextToken :: NullOrUndefined (String), projects :: NullOrUndefined (ProjectNames) }
+  = ListProjectsOutput { nextToken :: Maybe (String), projects :: Maybe (ProjectNames) }
 ```
 
 ##### Instances
@@ -1333,7 +1333,7 @@ Constructs ListProjectsOutput from required parameters
 #### `newListProjectsOutput'`
 
 ``` purescript
-newListProjectsOutput' :: ({ nextToken :: NullOrUndefined (String), projects :: NullOrUndefined (ProjectNames) } -> { nextToken :: NullOrUndefined (String), projects :: NullOrUndefined (ProjectNames) }) -> ListProjectsOutput
+newListProjectsOutput' :: ({ nextToken :: Maybe (String), projects :: Maybe (ProjectNames) } -> { nextToken :: Maybe (String), projects :: Maybe (ProjectNames) }) -> ListProjectsOutput
 ```
 
 Constructs ListProjectsOutput's fields from required parameters
@@ -1342,7 +1342,7 @@ Constructs ListProjectsOutput's fields from required parameters
 
 ``` purescript
 newtype LogsLocation
-  = LogsLocation { groupName :: NullOrUndefined (String), streamName :: NullOrUndefined (String), deepLink :: NullOrUndefined (String) }
+  = LogsLocation { groupName :: Maybe (String), streamName :: Maybe (String), deepLink :: Maybe (String) }
 ```
 
 <p>Information about build logs in Amazon CloudWatch Logs.</p>
@@ -1367,7 +1367,7 @@ Constructs LogsLocation from required parameters
 #### `newLogsLocation'`
 
 ``` purescript
-newLogsLocation' :: ({ groupName :: NullOrUndefined (String), streamName :: NullOrUndefined (String), deepLink :: NullOrUndefined (String) } -> { groupName :: NullOrUndefined (String), streamName :: NullOrUndefined (String), deepLink :: NullOrUndefined (String) }) -> LogsLocation
+newLogsLocation' :: ({ groupName :: Maybe (String), streamName :: Maybe (String), deepLink :: Maybe (String) } -> { groupName :: Maybe (String), streamName :: Maybe (String), deepLink :: Maybe (String) }) -> LogsLocation
 ```
 
 Constructs LogsLocation's fields from required parameters
@@ -1376,7 +1376,7 @@ Constructs LogsLocation's fields from required parameters
 
 ``` purescript
 newtype NetworkInterface
-  = NetworkInterface { subnetId :: NullOrUndefined (NonEmptyString), networkInterfaceId :: NullOrUndefined (NonEmptyString) }
+  = NetworkInterface { subnetId :: Maybe (NonEmptyString), networkInterfaceId :: Maybe (NonEmptyString) }
 ```
 
 <p>Describes a network interface.</p>
@@ -1401,7 +1401,7 @@ Constructs NetworkInterface from required parameters
 #### `newNetworkInterface'`
 
 ``` purescript
-newNetworkInterface' :: ({ subnetId :: NullOrUndefined (NonEmptyString), networkInterfaceId :: NullOrUndefined (NonEmptyString) } -> { subnetId :: NullOrUndefined (NonEmptyString), networkInterfaceId :: NullOrUndefined (NonEmptyString) }) -> NetworkInterface
+newNetworkInterface' :: ({ subnetId :: Maybe (NonEmptyString), networkInterfaceId :: Maybe (NonEmptyString) } -> { subnetId :: Maybe (NonEmptyString), networkInterfaceId :: Maybe (NonEmptyString) }) -> NetworkInterface
 ```
 
 Constructs NetworkInterface's fields from required parameters
@@ -1444,7 +1444,7 @@ Encode OAuthProviderException
 
 ``` purescript
 newtype PhaseContext
-  = PhaseContext { statusCode :: NullOrUndefined (String), message :: NullOrUndefined (String) }
+  = PhaseContext { statusCode :: Maybe (String), message :: Maybe (String) }
 ```
 
 <p>Additional information about a build phase that has an error. You can use this information to help troubleshoot a failed build.</p>
@@ -1469,7 +1469,7 @@ Constructs PhaseContext from required parameters
 #### `newPhaseContext'`
 
 ``` purescript
-newPhaseContext' :: ({ statusCode :: NullOrUndefined (String), message :: NullOrUndefined (String) } -> { statusCode :: NullOrUndefined (String), message :: NullOrUndefined (String) }) -> PhaseContext
+newPhaseContext' :: ({ statusCode :: Maybe (String), message :: Maybe (String) } -> { statusCode :: Maybe (String), message :: Maybe (String) }) -> PhaseContext
 ```
 
 Constructs PhaseContext's fields from required parameters
@@ -1510,7 +1510,7 @@ Encode PlatformType
 
 ``` purescript
 newtype Project
-  = Project { name :: NullOrUndefined (ProjectName), arn :: NullOrUndefined (String), description :: NullOrUndefined (ProjectDescription), source :: NullOrUndefined (ProjectSource), artifacts :: NullOrUndefined (ProjectArtifacts), cache :: NullOrUndefined (ProjectCache), environment :: NullOrUndefined (ProjectEnvironment), serviceRole :: NullOrUndefined (NonEmptyString), timeoutInMinutes :: NullOrUndefined (TimeOut), encryptionKey :: NullOrUndefined (NonEmptyString), tags :: NullOrUndefined (TagList), created :: NullOrUndefined (Timestamp), lastModified :: NullOrUndefined (Timestamp), webhook :: NullOrUndefined (Webhook), vpcConfig :: NullOrUndefined (VpcConfig), badge :: NullOrUndefined (ProjectBadge) }
+  = Project { name :: Maybe (ProjectName), arn :: Maybe (String), description :: Maybe (ProjectDescription), source :: Maybe (ProjectSource), artifacts :: Maybe (ProjectArtifacts), cache :: Maybe (ProjectCache), environment :: Maybe (ProjectEnvironment), serviceRole :: Maybe (NonEmptyString), timeoutInMinutes :: Maybe (TimeOut), encryptionKey :: Maybe (NonEmptyString), tags :: Maybe (TagList), created :: Maybe (Timestamp), lastModified :: Maybe (Timestamp), webhook :: Maybe (Webhook), vpcConfig :: Maybe (VpcConfig), badge :: Maybe (ProjectBadge) }
 ```
 
 <p>Information about a build project.</p>
@@ -1535,7 +1535,7 @@ Constructs Project from required parameters
 #### `newProject'`
 
 ``` purescript
-newProject' :: ({ name :: NullOrUndefined (ProjectName), arn :: NullOrUndefined (String), description :: NullOrUndefined (ProjectDescription), source :: NullOrUndefined (ProjectSource), artifacts :: NullOrUndefined (ProjectArtifacts), cache :: NullOrUndefined (ProjectCache), environment :: NullOrUndefined (ProjectEnvironment), serviceRole :: NullOrUndefined (NonEmptyString), timeoutInMinutes :: NullOrUndefined (TimeOut), encryptionKey :: NullOrUndefined (NonEmptyString), tags :: NullOrUndefined (TagList), created :: NullOrUndefined (Timestamp), lastModified :: NullOrUndefined (Timestamp), webhook :: NullOrUndefined (Webhook), vpcConfig :: NullOrUndefined (VpcConfig), badge :: NullOrUndefined (ProjectBadge) } -> { name :: NullOrUndefined (ProjectName), arn :: NullOrUndefined (String), description :: NullOrUndefined (ProjectDescription), source :: NullOrUndefined (ProjectSource), artifacts :: NullOrUndefined (ProjectArtifacts), cache :: NullOrUndefined (ProjectCache), environment :: NullOrUndefined (ProjectEnvironment), serviceRole :: NullOrUndefined (NonEmptyString), timeoutInMinutes :: NullOrUndefined (TimeOut), encryptionKey :: NullOrUndefined (NonEmptyString), tags :: NullOrUndefined (TagList), created :: NullOrUndefined (Timestamp), lastModified :: NullOrUndefined (Timestamp), webhook :: NullOrUndefined (Webhook), vpcConfig :: NullOrUndefined (VpcConfig), badge :: NullOrUndefined (ProjectBadge) }) -> Project
+newProject' :: ({ name :: Maybe (ProjectName), arn :: Maybe (String), description :: Maybe (ProjectDescription), source :: Maybe (ProjectSource), artifacts :: Maybe (ProjectArtifacts), cache :: Maybe (ProjectCache), environment :: Maybe (ProjectEnvironment), serviceRole :: Maybe (NonEmptyString), timeoutInMinutes :: Maybe (TimeOut), encryptionKey :: Maybe (NonEmptyString), tags :: Maybe (TagList), created :: Maybe (Timestamp), lastModified :: Maybe (Timestamp), webhook :: Maybe (Webhook), vpcConfig :: Maybe (VpcConfig), badge :: Maybe (ProjectBadge) } -> { name :: Maybe (ProjectName), arn :: Maybe (String), description :: Maybe (ProjectDescription), source :: Maybe (ProjectSource), artifacts :: Maybe (ProjectArtifacts), cache :: Maybe (ProjectCache), environment :: Maybe (ProjectEnvironment), serviceRole :: Maybe (NonEmptyString), timeoutInMinutes :: Maybe (TimeOut), encryptionKey :: Maybe (NonEmptyString), tags :: Maybe (TagList), created :: Maybe (Timestamp), lastModified :: Maybe (Timestamp), webhook :: Maybe (Webhook), vpcConfig :: Maybe (VpcConfig), badge :: Maybe (ProjectBadge) }) -> Project
 ```
 
 Constructs Project's fields from required parameters
@@ -1544,7 +1544,7 @@ Constructs Project's fields from required parameters
 
 ``` purescript
 newtype ProjectArtifacts
-  = ProjectArtifacts { "type" :: ArtifactsType, location :: NullOrUndefined (String), path :: NullOrUndefined (String), namespaceType :: NullOrUndefined (ArtifactNamespace), name :: NullOrUndefined (String), packaging :: NullOrUndefined (ArtifactPackaging) }
+  = ProjectArtifacts { "type" :: ArtifactsType, location :: Maybe (String), path :: Maybe (String), namespaceType :: Maybe (ArtifactNamespace), name :: Maybe (String), packaging :: Maybe (ArtifactPackaging) }
 ```
 
 <p>Information about the build output artifacts for the build project.</p>
@@ -1569,7 +1569,7 @@ Constructs ProjectArtifacts from required parameters
 #### `newProjectArtifacts'`
 
 ``` purescript
-newProjectArtifacts' :: ArtifactsType -> ({ "type" :: ArtifactsType, location :: NullOrUndefined (String), path :: NullOrUndefined (String), namespaceType :: NullOrUndefined (ArtifactNamespace), name :: NullOrUndefined (String), packaging :: NullOrUndefined (ArtifactPackaging) } -> { "type" :: ArtifactsType, location :: NullOrUndefined (String), path :: NullOrUndefined (String), namespaceType :: NullOrUndefined (ArtifactNamespace), name :: NullOrUndefined (String), packaging :: NullOrUndefined (ArtifactPackaging) }) -> ProjectArtifacts
+newProjectArtifacts' :: ArtifactsType -> ({ "type" :: ArtifactsType, location :: Maybe (String), path :: Maybe (String), namespaceType :: Maybe (ArtifactNamespace), name :: Maybe (String), packaging :: Maybe (ArtifactPackaging) } -> { "type" :: ArtifactsType, location :: Maybe (String), path :: Maybe (String), namespaceType :: Maybe (ArtifactNamespace), name :: Maybe (String), packaging :: Maybe (ArtifactPackaging) }) -> ProjectArtifacts
 ```
 
 Constructs ProjectArtifacts's fields from required parameters
@@ -1578,7 +1578,7 @@ Constructs ProjectArtifacts's fields from required parameters
 
 ``` purescript
 newtype ProjectBadge
-  = ProjectBadge { badgeEnabled :: NullOrUndefined (Boolean), badgeRequestUrl :: NullOrUndefined (String) }
+  = ProjectBadge { badgeEnabled :: Maybe (Boolean), badgeRequestUrl :: Maybe (String) }
 ```
 
 <p>Information about the build badge for the build project.</p>
@@ -1603,7 +1603,7 @@ Constructs ProjectBadge from required parameters
 #### `newProjectBadge'`
 
 ``` purescript
-newProjectBadge' :: ({ badgeEnabled :: NullOrUndefined (Boolean), badgeRequestUrl :: NullOrUndefined (String) } -> { badgeEnabled :: NullOrUndefined (Boolean), badgeRequestUrl :: NullOrUndefined (String) }) -> ProjectBadge
+newProjectBadge' :: ({ badgeEnabled :: Maybe (Boolean), badgeRequestUrl :: Maybe (String) } -> { badgeEnabled :: Maybe (Boolean), badgeRequestUrl :: Maybe (String) }) -> ProjectBadge
 ```
 
 Constructs ProjectBadge's fields from required parameters
@@ -1612,7 +1612,7 @@ Constructs ProjectBadge's fields from required parameters
 
 ``` purescript
 newtype ProjectCache
-  = ProjectCache { "type" :: CacheType, location :: NullOrUndefined (String) }
+  = ProjectCache { "type" :: CacheType, location :: Maybe (String) }
 ```
 
 <p>Information about the cache for the build project.</p>
@@ -1637,7 +1637,7 @@ Constructs ProjectCache from required parameters
 #### `newProjectCache'`
 
 ``` purescript
-newProjectCache' :: CacheType -> ({ "type" :: CacheType, location :: NullOrUndefined (String) } -> { "type" :: CacheType, location :: NullOrUndefined (String) }) -> ProjectCache
+newProjectCache' :: CacheType -> ({ "type" :: CacheType, location :: Maybe (String) } -> { "type" :: CacheType, location :: Maybe (String) }) -> ProjectCache
 ```
 
 Constructs ProjectCache's fields from required parameters
@@ -1662,7 +1662,7 @@ Encode ProjectDescription
 
 ``` purescript
 newtype ProjectEnvironment
-  = ProjectEnvironment { "type" :: EnvironmentType, image :: NonEmptyString, computeType :: ComputeType, environmentVariables :: NullOrUndefined (EnvironmentVariables), privilegedMode :: NullOrUndefined (WrapperBoolean), certificate :: NullOrUndefined (String) }
+  = ProjectEnvironment { "type" :: EnvironmentType, image :: NonEmptyString, computeType :: ComputeType, environmentVariables :: Maybe (EnvironmentVariables), privilegedMode :: Maybe (WrapperBoolean), certificate :: Maybe (String) }
 ```
 
 <p>Information about the build environment of the build project.</p>
@@ -1687,7 +1687,7 @@ Constructs ProjectEnvironment from required parameters
 #### `newProjectEnvironment'`
 
 ``` purescript
-newProjectEnvironment' :: ComputeType -> NonEmptyString -> EnvironmentType -> ({ "type" :: EnvironmentType, image :: NonEmptyString, computeType :: ComputeType, environmentVariables :: NullOrUndefined (EnvironmentVariables), privilegedMode :: NullOrUndefined (WrapperBoolean), certificate :: NullOrUndefined (String) } -> { "type" :: EnvironmentType, image :: NonEmptyString, computeType :: ComputeType, environmentVariables :: NullOrUndefined (EnvironmentVariables), privilegedMode :: NullOrUndefined (WrapperBoolean), certificate :: NullOrUndefined (String) }) -> ProjectEnvironment
+newProjectEnvironment' :: ComputeType -> NonEmptyString -> EnvironmentType -> ({ "type" :: EnvironmentType, image :: NonEmptyString, computeType :: ComputeType, environmentVariables :: Maybe (EnvironmentVariables), privilegedMode :: Maybe (WrapperBoolean), certificate :: Maybe (String) } -> { "type" :: EnvironmentType, image :: NonEmptyString, computeType :: ComputeType, environmentVariables :: Maybe (EnvironmentVariables), privilegedMode :: Maybe (WrapperBoolean), certificate :: Maybe (String) }) -> ProjectEnvironment
 ```
 
 Constructs ProjectEnvironment's fields from required parameters
@@ -1744,7 +1744,7 @@ Encode ProjectSortByType
 
 ``` purescript
 newtype ProjectSource
-  = ProjectSource { "type" :: SourceType, location :: NullOrUndefined (String), gitCloneDepth :: NullOrUndefined (GitCloneDepth), buildspec :: NullOrUndefined (String), auth :: NullOrUndefined (SourceAuth), insecureSsl :: NullOrUndefined (WrapperBoolean) }
+  = ProjectSource { "type" :: SourceType, location :: Maybe (String), gitCloneDepth :: Maybe (GitCloneDepth), buildspec :: Maybe (String), auth :: Maybe (SourceAuth), insecureSsl :: Maybe (WrapperBoolean) }
 ```
 
 <p>Information about the build input source code for the build project.</p>
@@ -1769,7 +1769,7 @@ Constructs ProjectSource from required parameters
 #### `newProjectSource'`
 
 ``` purescript
-newProjectSource' :: SourceType -> ({ "type" :: SourceType, location :: NullOrUndefined (String), gitCloneDepth :: NullOrUndefined (GitCloneDepth), buildspec :: NullOrUndefined (String), auth :: NullOrUndefined (SourceAuth), insecureSsl :: NullOrUndefined (WrapperBoolean) } -> { "type" :: SourceType, location :: NullOrUndefined (String), gitCloneDepth :: NullOrUndefined (GitCloneDepth), buildspec :: NullOrUndefined (String), auth :: NullOrUndefined (SourceAuth), insecureSsl :: NullOrUndefined (WrapperBoolean) }) -> ProjectSource
+newProjectSource' :: SourceType -> ({ "type" :: SourceType, location :: Maybe (String), gitCloneDepth :: Maybe (GitCloneDepth), buildspec :: Maybe (String), auth :: Maybe (SourceAuth), insecureSsl :: Maybe (WrapperBoolean) } -> { "type" :: SourceType, location :: Maybe (String), gitCloneDepth :: Maybe (GitCloneDepth), buildspec :: Maybe (String), auth :: Maybe (SourceAuth), insecureSsl :: Maybe (WrapperBoolean) }) -> ProjectSource
 ```
 
 Constructs ProjectSource's fields from required parameters
@@ -1862,7 +1862,7 @@ Encode SortOrderType
 
 ``` purescript
 newtype SourceAuth
-  = SourceAuth { "type" :: SourceAuthType, resource :: NullOrUndefined (String) }
+  = SourceAuth { "type" :: SourceAuthType, resource :: Maybe (String) }
 ```
 
 <p>Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p> <p>This information is for the AWS CodeBuild console's use only. Your code should not get or set this information directly (unless the build project's source <code>type</code> value is <code>BITBUCKET</code> or <code>GITHUB</code>).</p>
@@ -1887,7 +1887,7 @@ Constructs SourceAuth from required parameters
 #### `newSourceAuth'`
 
 ``` purescript
-newSourceAuth' :: SourceAuthType -> ({ "type" :: SourceAuthType, resource :: NullOrUndefined (String) } -> { "type" :: SourceAuthType, resource :: NullOrUndefined (String) }) -> SourceAuth
+newSourceAuth' :: SourceAuthType -> ({ "type" :: SourceAuthType, resource :: Maybe (String) } -> { "type" :: SourceAuthType, resource :: Maybe (String) }) -> SourceAuth
 ```
 
 Constructs SourceAuth's fields from required parameters
@@ -1928,7 +1928,7 @@ Encode SourceType
 
 ``` purescript
 newtype StartBuildInput
-  = StartBuildInput { projectName :: NonEmptyString, sourceVersion :: NullOrUndefined (String), artifactsOverride :: NullOrUndefined (ProjectArtifacts), environmentVariablesOverride :: NullOrUndefined (EnvironmentVariables), gitCloneDepthOverride :: NullOrUndefined (GitCloneDepth), buildspecOverride :: NullOrUndefined (String), timeoutInMinutesOverride :: NullOrUndefined (TimeOut) }
+  = StartBuildInput { projectName :: NonEmptyString, sourceVersion :: Maybe (String), artifactsOverride :: Maybe (ProjectArtifacts), environmentVariablesOverride :: Maybe (EnvironmentVariables), gitCloneDepthOverride :: Maybe (GitCloneDepth), buildspecOverride :: Maybe (String), timeoutInMinutesOverride :: Maybe (TimeOut) }
 ```
 
 ##### Instances
@@ -1951,7 +1951,7 @@ Constructs StartBuildInput from required parameters
 #### `newStartBuildInput'`
 
 ``` purescript
-newStartBuildInput' :: NonEmptyString -> ({ projectName :: NonEmptyString, sourceVersion :: NullOrUndefined (String), artifactsOverride :: NullOrUndefined (ProjectArtifacts), environmentVariablesOverride :: NullOrUndefined (EnvironmentVariables), gitCloneDepthOverride :: NullOrUndefined (GitCloneDepth), buildspecOverride :: NullOrUndefined (String), timeoutInMinutesOverride :: NullOrUndefined (TimeOut) } -> { projectName :: NonEmptyString, sourceVersion :: NullOrUndefined (String), artifactsOverride :: NullOrUndefined (ProjectArtifacts), environmentVariablesOverride :: NullOrUndefined (EnvironmentVariables), gitCloneDepthOverride :: NullOrUndefined (GitCloneDepth), buildspecOverride :: NullOrUndefined (String), timeoutInMinutesOverride :: NullOrUndefined (TimeOut) }) -> StartBuildInput
+newStartBuildInput' :: NonEmptyString -> ({ projectName :: NonEmptyString, sourceVersion :: Maybe (String), artifactsOverride :: Maybe (ProjectArtifacts), environmentVariablesOverride :: Maybe (EnvironmentVariables), gitCloneDepthOverride :: Maybe (GitCloneDepth), buildspecOverride :: Maybe (String), timeoutInMinutesOverride :: Maybe (TimeOut) } -> { projectName :: NonEmptyString, sourceVersion :: Maybe (String), artifactsOverride :: Maybe (ProjectArtifacts), environmentVariablesOverride :: Maybe (EnvironmentVariables), gitCloneDepthOverride :: Maybe (GitCloneDepth), buildspecOverride :: Maybe (String), timeoutInMinutesOverride :: Maybe (TimeOut) }) -> StartBuildInput
 ```
 
 Constructs StartBuildInput's fields from required parameters
@@ -1960,7 +1960,7 @@ Constructs StartBuildInput's fields from required parameters
 
 ``` purescript
 newtype StartBuildOutput
-  = StartBuildOutput { build :: NullOrUndefined (Build) }
+  = StartBuildOutput { build :: Maybe (Build) }
 ```
 
 ##### Instances
@@ -1983,7 +1983,7 @@ Constructs StartBuildOutput from required parameters
 #### `newStartBuildOutput'`
 
 ``` purescript
-newStartBuildOutput' :: ({ build :: NullOrUndefined (Build) } -> { build :: NullOrUndefined (Build) }) -> StartBuildOutput
+newStartBuildOutput' :: ({ build :: Maybe (Build) } -> { build :: Maybe (Build) }) -> StartBuildOutput
 ```
 
 Constructs StartBuildOutput's fields from required parameters
@@ -2040,7 +2040,7 @@ Constructs StopBuildInput's fields from required parameters
 
 ``` purescript
 newtype StopBuildOutput
-  = StopBuildOutput { build :: NullOrUndefined (Build) }
+  = StopBuildOutput { build :: Maybe (Build) }
 ```
 
 ##### Instances
@@ -2063,7 +2063,7 @@ Constructs StopBuildOutput from required parameters
 #### `newStopBuildOutput'`
 
 ``` purescript
-newStopBuildOutput' :: ({ build :: NullOrUndefined (Build) } -> { build :: NullOrUndefined (Build) }) -> StopBuildOutput
+newStopBuildOutput' :: ({ build :: Maybe (Build) } -> { build :: Maybe (Build) }) -> StopBuildOutput
 ```
 
 Constructs StopBuildOutput's fields from required parameters
@@ -2088,7 +2088,7 @@ Encode Subnets
 
 ``` purescript
 newtype Tag
-  = Tag { key :: NullOrUndefined (KeyInput), value :: NullOrUndefined (ValueInput) }
+  = Tag { key :: Maybe (KeyInput), value :: Maybe (ValueInput) }
 ```
 
 <p>A tag, consisting of a key and a value.</p> <p>This tag is available for use by AWS services that support tags in AWS CodeBuild.</p>
@@ -2113,7 +2113,7 @@ Constructs Tag from required parameters
 #### `newTag'`
 
 ``` purescript
-newTag' :: ({ key :: NullOrUndefined (KeyInput), value :: NullOrUndefined (ValueInput) } -> { key :: NullOrUndefined (KeyInput), value :: NullOrUndefined (ValueInput) }) -> Tag
+newTag' :: ({ key :: Maybe (KeyInput), value :: Maybe (ValueInput) } -> { key :: Maybe (KeyInput), value :: Maybe (ValueInput) }) -> Tag
 ```
 
 Constructs Tag's fields from required parameters
@@ -2154,7 +2154,7 @@ Encode TimeOut
 
 ``` purescript
 newtype UpdateProjectInput
-  = UpdateProjectInput { name :: NonEmptyString, description :: NullOrUndefined (ProjectDescription), source :: NullOrUndefined (ProjectSource), artifacts :: NullOrUndefined (ProjectArtifacts), cache :: NullOrUndefined (ProjectCache), environment :: NullOrUndefined (ProjectEnvironment), serviceRole :: NullOrUndefined (NonEmptyString), timeoutInMinutes :: NullOrUndefined (TimeOut), encryptionKey :: NullOrUndefined (NonEmptyString), tags :: NullOrUndefined (TagList), vpcConfig :: NullOrUndefined (VpcConfig), badgeEnabled :: NullOrUndefined (WrapperBoolean) }
+  = UpdateProjectInput { name :: NonEmptyString, description :: Maybe (ProjectDescription), source :: Maybe (ProjectSource), artifacts :: Maybe (ProjectArtifacts), cache :: Maybe (ProjectCache), environment :: Maybe (ProjectEnvironment), serviceRole :: Maybe (NonEmptyString), timeoutInMinutes :: Maybe (TimeOut), encryptionKey :: Maybe (NonEmptyString), tags :: Maybe (TagList), vpcConfig :: Maybe (VpcConfig), badgeEnabled :: Maybe (WrapperBoolean) }
 ```
 
 ##### Instances
@@ -2177,7 +2177,7 @@ Constructs UpdateProjectInput from required parameters
 #### `newUpdateProjectInput'`
 
 ``` purescript
-newUpdateProjectInput' :: NonEmptyString -> ({ name :: NonEmptyString, description :: NullOrUndefined (ProjectDescription), source :: NullOrUndefined (ProjectSource), artifacts :: NullOrUndefined (ProjectArtifacts), cache :: NullOrUndefined (ProjectCache), environment :: NullOrUndefined (ProjectEnvironment), serviceRole :: NullOrUndefined (NonEmptyString), timeoutInMinutes :: NullOrUndefined (TimeOut), encryptionKey :: NullOrUndefined (NonEmptyString), tags :: NullOrUndefined (TagList), vpcConfig :: NullOrUndefined (VpcConfig), badgeEnabled :: NullOrUndefined (WrapperBoolean) } -> { name :: NonEmptyString, description :: NullOrUndefined (ProjectDescription), source :: NullOrUndefined (ProjectSource), artifacts :: NullOrUndefined (ProjectArtifacts), cache :: NullOrUndefined (ProjectCache), environment :: NullOrUndefined (ProjectEnvironment), serviceRole :: NullOrUndefined (NonEmptyString), timeoutInMinutes :: NullOrUndefined (TimeOut), encryptionKey :: NullOrUndefined (NonEmptyString), tags :: NullOrUndefined (TagList), vpcConfig :: NullOrUndefined (VpcConfig), badgeEnabled :: NullOrUndefined (WrapperBoolean) }) -> UpdateProjectInput
+newUpdateProjectInput' :: NonEmptyString -> ({ name :: NonEmptyString, description :: Maybe (ProjectDescription), source :: Maybe (ProjectSource), artifacts :: Maybe (ProjectArtifacts), cache :: Maybe (ProjectCache), environment :: Maybe (ProjectEnvironment), serviceRole :: Maybe (NonEmptyString), timeoutInMinutes :: Maybe (TimeOut), encryptionKey :: Maybe (NonEmptyString), tags :: Maybe (TagList), vpcConfig :: Maybe (VpcConfig), badgeEnabled :: Maybe (WrapperBoolean) } -> { name :: NonEmptyString, description :: Maybe (ProjectDescription), source :: Maybe (ProjectSource), artifacts :: Maybe (ProjectArtifacts), cache :: Maybe (ProjectCache), environment :: Maybe (ProjectEnvironment), serviceRole :: Maybe (NonEmptyString), timeoutInMinutes :: Maybe (TimeOut), encryptionKey :: Maybe (NonEmptyString), tags :: Maybe (TagList), vpcConfig :: Maybe (VpcConfig), badgeEnabled :: Maybe (WrapperBoolean) }) -> UpdateProjectInput
 ```
 
 Constructs UpdateProjectInput's fields from required parameters
@@ -2186,7 +2186,7 @@ Constructs UpdateProjectInput's fields from required parameters
 
 ``` purescript
 newtype UpdateProjectOutput
-  = UpdateProjectOutput { project :: NullOrUndefined (Project) }
+  = UpdateProjectOutput { project :: Maybe (Project) }
 ```
 
 ##### Instances
@@ -2209,7 +2209,7 @@ Constructs UpdateProjectOutput from required parameters
 #### `newUpdateProjectOutput'`
 
 ``` purescript
-newUpdateProjectOutput' :: ({ project :: NullOrUndefined (Project) } -> { project :: NullOrUndefined (Project) }) -> UpdateProjectOutput
+newUpdateProjectOutput' :: ({ project :: Maybe (Project) } -> { project :: Maybe (Project) }) -> UpdateProjectOutput
 ```
 
 Constructs UpdateProjectOutput's fields from required parameters
@@ -2234,7 +2234,7 @@ Encode ValueInput
 
 ``` purescript
 newtype VpcConfig
-  = VpcConfig { vpcId :: NullOrUndefined (NonEmptyString), subnets :: NullOrUndefined (Subnets), securityGroupIds :: NullOrUndefined (SecurityGroupIds) }
+  = VpcConfig { vpcId :: Maybe (NonEmptyString), subnets :: Maybe (Subnets), securityGroupIds :: Maybe (SecurityGroupIds) }
 ```
 
 <p>Information about the VPC configuration that AWS CodeBuild will access.</p>
@@ -2259,7 +2259,7 @@ Constructs VpcConfig from required parameters
 #### `newVpcConfig'`
 
 ``` purescript
-newVpcConfig' :: ({ vpcId :: NullOrUndefined (NonEmptyString), subnets :: NullOrUndefined (Subnets), securityGroupIds :: NullOrUndefined (SecurityGroupIds) } -> { vpcId :: NullOrUndefined (NonEmptyString), subnets :: NullOrUndefined (Subnets), securityGroupIds :: NullOrUndefined (SecurityGroupIds) }) -> VpcConfig
+newVpcConfig' :: ({ vpcId :: Maybe (NonEmptyString), subnets :: Maybe (Subnets), securityGroupIds :: Maybe (SecurityGroupIds) } -> { vpcId :: Maybe (NonEmptyString), subnets :: Maybe (Subnets), securityGroupIds :: Maybe (SecurityGroupIds) }) -> VpcConfig
 ```
 
 Constructs VpcConfig's fields from required parameters
@@ -2268,7 +2268,7 @@ Constructs VpcConfig's fields from required parameters
 
 ``` purescript
 newtype Webhook
-  = Webhook { url :: NullOrUndefined (NonEmptyString), payloadUrl :: NullOrUndefined (NonEmptyString), secret :: NullOrUndefined (NonEmptyString) }
+  = Webhook { url :: Maybe (NonEmptyString), payloadUrl :: Maybe (NonEmptyString), secret :: Maybe (NonEmptyString) }
 ```
 
 <p>Information about a webhook in GitHub that connects repository events to a build project in AWS CodeBuild.</p>
@@ -2293,7 +2293,7 @@ Constructs Webhook from required parameters
 #### `newWebhook'`
 
 ``` purescript
-newWebhook' :: ({ url :: NullOrUndefined (NonEmptyString), payloadUrl :: NullOrUndefined (NonEmptyString), secret :: NullOrUndefined (NonEmptyString) } -> { url :: NullOrUndefined (NonEmptyString), payloadUrl :: NullOrUndefined (NonEmptyString), secret :: NullOrUndefined (NonEmptyString) }) -> Webhook
+newWebhook' :: ({ url :: Maybe (NonEmptyString), payloadUrl :: Maybe (NonEmptyString), secret :: Maybe (NonEmptyString) } -> { url :: Maybe (NonEmptyString), payloadUrl :: Maybe (NonEmptyString), secret :: Maybe (NonEmptyString) }) -> Webhook
 ```
 
 Constructs Webhook's fields from required parameters
